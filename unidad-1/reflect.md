@@ -48,15 +48,83 @@ Personalmente, no importa el contexto, siempre prefiero tener una guia paso a pa
 
 *Encuentra un compañero de trabajo.*
 
-
+Valentina Garzón.
 
 *Intercambien las URLs de sus bitácoras de aprendizaje.*
 
-
+[Bitacora de Valentina Garzón (la que revise)](https://github.com/jfUPB/interactivos1-2025-20-Valengp2006/blob/unidad1/apply/unidad-1/apply.md)
 
 *Concéntrate en la Actividad 06: control de movimiento con micro:bit de tu compañero. Lee su código (Python y JavaScript).*
 
+Codigo de ella de JavaScript
 
+```
+let port;
+let connectBtn;
+let connectionInitialized = false;
+let x = 100;
+
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+  port = createSerial();
+  connectBtn = createButton("Connect to micro:bit");
+  connectBtn.position(80, 300);
+  connectBtn.mousePressed(connectBtnClick);
+}
+
+function draw() {
+  background(220);
+
+  if (port.opened() && !connectionInitialized) {
+    port.clear();
+    connectionInitialized = true;
+  }
+
+  if (port.availableBytes() > 0) {
+    let dataRx = port.read(1);
+    if (dataRx == "A") {
+      x -= 10;
+    } else if (dataRx == "B") {
+      x += 10;
+    }
+  }
+
+  ellipseMode(CENTER);
+  fill("red");
+  ellipse(x, height / 2, 50, 50);
+
+  if (!port.opened()) {
+    connectBtn.html("Connect to micro:bit");
+  } else {
+    connectBtn.html("Disconnect");
+  }
+}
+
+function connectBtnClick() {
+  if (!port.opened()) {
+    port.open("MicroPython", 115200);
+    connectionInitialized = false;
+  } else {
+    port.close();
+  }
+}
+
+Codigo de Python:
+
+```Python
+
+from microbit import *
+
+uart.init(baudrate=115200)
+display.show(Image.SILLY)
+
+while True:
+    if button_a.is_pressed():
+        uart.write('A')
+    if button_b.is_pressed():
+        uart.write('B')
+```
 
 *Tu compañero resolvió el problema de manera diferente a ti, qué hizo diferente, qué aprendiste de su solución. En tu bitácora documenta lo anterior y escribe, como si le estuvieras explicando, lo que tú hiciste y por qué es diferente a lo que hizo tu compañero.*
 
