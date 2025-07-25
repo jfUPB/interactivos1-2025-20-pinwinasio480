@@ -56,7 +56,7 @@ Valentina Garzón.
 
 *Concéntrate en la Actividad 06: control de movimiento con micro:bit de tu compañero. Lee su código (Python y JavaScript).*
 
-Codigo de ella de JavaScript
+Codigo de ella de JavaScript (coloco ambos en esta bitacora por si algo):
 
 ```
 let port;
@@ -129,7 +129,7 @@ while True:
 
 *Tu compañero resolvió el problema de manera diferente a ti, qué hizo diferente, qué aprendiste de su solución. En tu bitácora documenta lo anterior y escribe, como si le estuvieras explicando, lo que tú hiciste y por qué es diferente a lo que hizo tu compañero.*
 
-
+Mi compañera yo tenemos codigos muy similares, salvo por ligeras diferencias como en una etiqueta y uno de los valores de movimiento del circulo, pero para explicarlo mejor, ire diciendo codigo por codigo (de los dos que se hicieron). En el de JavaScript, el letcirclex del inicio ella lo tiene en 100, yo en 200; en la parte de function (draw), despues de cada if o else if (los encargados del movimiento del circulo), yo en mi ejercicio me referia al movimiento que debia hacer como "circleX +=/-=", ella lo escribio como "x +=/-=". Y por ultimo, en el de Python, la unica diferencia es que la compañera no escribio el sleep (100), lo que si mal no recuerdo, era el cool down entre cada oprimida de boton. En este caso es complicado decir porque las diferencias, es más cuestión de que en un inicio ambos intentamos resolverlo de formas opuestas, pero finalmente logramos cumplir con el objetivo de la actividad.
 
 ### Actividad 9
 
