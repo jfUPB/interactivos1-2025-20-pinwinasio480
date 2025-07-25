@@ -4,7 +4,7 @@
 
 **Actividad 7
 
-**Parte 1: recuperación de conocimiento (Retrieval Practice)
+*Parte 1: recuperación de conocimiento (Retrieval Practice)*
 
 **Basándote en los ejemplos que vimos de sistemas físicos interactivos al iniciar el curso, describe las tres características que definen a un sistema físico interactivo.
 
