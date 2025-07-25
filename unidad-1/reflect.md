@@ -42,7 +42,7 @@ Digamos que cambio mi forma de ver el curso dando un giro de 180 grados, porque 
 
 #### El tutorial de la Actividad 05 te llevó paso a paso. ¿Cómo te sentiste con ese método de aprendizaje? ¿Te dio seguridad o preferirías haberlo intentado por tu cuenta desde el principio?
 
-
+Personalmente, no importa el contexto, siempre prefiero tener una guia paso a paso como el de esa actividad si se trata de enfrentarse a algo de lo que nunca he hecho o no estoy tan enterado. En cierto modo, me dio bastante seguridad mientras lo iba desarollando, pero eso no cambia que al inicio me abrumara por la cantidad de pasos que tenia, porque tan solo ver la cantidad de pasos, creia que era algo que podia tardar hasta una semana completa, es más cosa de que aveces los nervios me hacen imaginar que sera muy complicado.
 
 ### Actividad 8
 
@@ -64,22 +64,23 @@ Tu compañero resolvió el problema de manera diferente a ti, qué hizo diferent
 
 ### Actividad 9
 
-Continuar: ¿Qué actividad, video o ejemplo de esta unidad te resultó más inspirador o te ayudó más a entender el potencial de los sistemas físicos interactivos?
+#### Continuar: ¿Qué actividad, video o ejemplo de esta unidad te resultó más inspirador o te ayudó más a entender el potencial de los sistemas físicos interactivos?
 
+Los que mencione en mi Actividad 1, el de Mario Kart Home Circuit y el de ProCreate, fue lo que hizo que entendiera que el potencial de los sistemas fisicos interactivos no solo se limita a las experiencias interactivas, sino tambien a los videojuegos y la animación digital, asi como ejemplos como el del logo de musica de Luxemburgo (no recuerdo el nombre exacto) que permitia hacer el mismo logo pero con ondas de sonido (no se como se dice jeje) que se mueven al mismo tiempo que el ritmo y musica que toque el artista.
 
+#### Dejar de hacer: ¿Hubo alguna parte que te pareció demasiado abstracta, muy rápida o confusa? ¿Hay algo que crees que podríamos cambiar para que sea más claro?
 
-Dejar de hacer: ¿Hubo alguna parte que te pareció demasiado abstracta, muy rápida o confusa? ¿Hay algo que crees que podríamos cambiar para que sea más claro?
+Es más cosa personal mia, pero lo que más me parecio confuso es la comprensión de que cosa es un Input y que es un Output dentro de un determinado sistema fisico interactivo, repito, esto es más problema mio, el profesor no tiene la culpa. Y sobre que se podria cambiar...honestamente no se que decir.
 
+#### Empezar a hacer: ¿Qué te genera más curiosidad ahora? ¿Te gustaría explorar más sensores del micro:bit (luz, temperatura), crear visualizaciones más complejas en p5.js o ver más ejemplos de proyectos artísticos?
 
+No me habia planteado esa pregunta previamente, pero leyendo el enunciado, si me gustaria explorar que más hace el micro:bit, aunque con lo de visualizaciones complejas...me llama tambien la atención, especialmente porque algunos ejemplo que vi me recordaban a esas pantallas de congelado de Windows XP con tuvos que iban avanzando, algo que de niño si me llegaba a dar curiosidad.
 
-Empezar a hacer: ¿Qué te genera más curiosidad ahora? ¿Te gustaría explorar más sensores del micro:bit (luz, temperatura), crear visualizaciones más complejas en p5.js o ver más ejemplos de proyectos artísticos?
+#### Balance inspiración vs. técnica: ¿Cómo sentiste el equilibrio entre ver los videos inspiradores de la Actividad 01 y la parte técnica de conectar las herramientas en las actividades 03-06?
 
+Se me hizo bastante equilibrado, si la intención de los videos era darnos una introducción al curso de forma creativa con ejemplos creativos en la actividad 01, y ya en las actividades 03-06 enseñarnos a como poner en practica un sistema desde cero de forma simple, le doy bastante merito al profesor.
 
+#### Comentario adicional: ¿Hay algo más que quieras compartir sobre tu experiencia en esta unidad introductoria?
 
-Balance inspiración vs. técnica: ¿Cómo sentiste el equilibrio entre ver los videos inspiradores de la Actividad 01 y la parte técnica de conectar las herramientas en las actividades 03-06?
-
-
-
-Comentario adicional: ¿Hay algo más que quieras compartir sobre tu experiencia en esta unidad introductoria?
-
+La verdad...no, generalmente no suelo ser de muchas palabras (salvo cuando estoy inspirado de más)...bueno, rectifico, si hay algo que me gustaria compartir, y es que hasta ahora, tenia mis dudas y temores (que sigo teniendo en algunos casos porque seguramnte en las proximas unidades la dificultad ira aumentando), pero gracias a lo vivido en la Unidad 1, me dio razones para que este curso comenzara a gustarme (no digo que antes no me gustara, sino que tenia mis dudas).
 
