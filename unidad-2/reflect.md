@@ -18,11 +18,26 @@ Parte 1: recuperación de conocimiento (Retrieval Practice)
 
 1. Describe con tus palabras qué es una máquina de estados. ¿Cuáles son sus cuatro componentes fundamentales que has utilizado en esta unidad?
 
+No recuerdo exactamante que es una maquina de estados, de lo que he estado haciendo en las actividades, supongo que una forma para gestionar de mejor forma cada uno de los estados en el programa separandolos. Es decir, con el semaforo por ejemplo, tener 3 estados, cada uno representando cada color del semaforo. De los cuatro componentes tampoco me acuerdo, pero intuyo que son Eventos, Acciones, Estados y Transiciones.
+
 2. Explica por qué la técnica de máquina de estados es tan útil para gestionar la “concurrencia” (atender un temporizador y botones “al mismo tiempo”) en un dispositivo con un solo hilo de ejecución como el micro:bit. ¿Qué problema soluciona en comparación con usar funciones como sleep()?
+
+Facilita el rendimiento del programa para no sobre cargar una misma parte del codigo con varias lineas que por medio de cada estado por separado, permite que en cada estado pueda asignar si se pueden oprimir botones, agitar o etc, y nuevamente, no recuerdo que es una maquina de estados, lo que estoy diciendo es en base a lo que estoy intentando recordar, soluciona el tiempo de respuesta entre cada evento que haga el usuario.
   
 3. Imagina que tienes que añadir una nueva funcionalidad a la bomba temporizada: si se agita (shake) el micro:bit mientras la cuenta regresiva está activa, el tiempo se reduce a la mitad. ¿Cómo modificarías tu diagrama de máquina de estados para incluir este nuevo evento y acción?
+
+En mi codigo, en el estado STATE_COUNTDOWN añadiria lo siguiente, aunque solo si el contador fue puesto en 30 segundos, ya que no se como hacer que sea para todos los tiempos:
+
+``` Python
+
+if accelerometer.was_gesture():
+time_stand -= 15
+
+```
   
-4. Explica qué es un “vector de prueba” y por qué es una herramienta crucial para verificar que una máquina de estados funciona como se espera.
+5. Explica qué es un “vector de prueba” y por qué es una herramienta crucial para verificar que una máquina de estados funciona como se espera.
+
+Un vector de prueba es una forma de verificar el correcto funcionamiento de alguna parte del codigo. Para que un vector de prueba cumpla con lo necesario, debe tener lo siguiente: Condición incial (el estado actual donde este), Evento: (Lo que se debe realizar), Resultado esperado (Lo que se espera que pase al realizar el evento) y Resultado final (Lo que se obtuvo, si el vector pasa por el programa o no).
    
 Parte 2: reflexión sobre tu proceso (Metacognición)
 
@@ -72,4 +87,5 @@ Responde a las siguientes preguntas con total sinceridad. ¡Cada comentario es v
    
 5. Comentario adicional: ¿Hay algo más que te gustaría compartir sobre tu proceso de aprendizaje en esta unidad? ¿Algún momento de frustración o de “¡Aha!” que quieras destacar?
     
+
 
