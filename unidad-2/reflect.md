@@ -99,10 +99,11 @@ Es dificl, puesto que es muy subjetivo, con lo que ha estado dando el profe diri
    
 4. Ritmo y dificultad: En una escala del 1 (muy fácil) al 5 (muy difícil), ¿Cómo calificarías la dificultad de pasar del análisis de un programa (Actividad 03) al diseño desde cero de uno complejo (Actividad 04 y 05)? ¿Por qué?
 
-3. Porque si bien, hay partes que son faciles de recordar y facilitan el proceso de diseño, hay otras que de plano involucran experimentar con lo que ofrece el editor de Micro:bit, repito, como dije antes, con lo de las lineas de musica para generar sonidos, fue algo interesante, aunque no haya sido solicitado por el profe (salvo el speaker al explotar).
+Porque si bien, hay partes que son faciles de recordar y facilitan el proceso de diseño, hay otras que de plano involucran experimentar con lo que ofrece el editor de Micro:bit, repito, como dije antes, con lo de las lineas de musica para generar sonidos, fue algo interesante, aunque no haya sido solicitado por el profe (salvo el speaker al explotar).
    
 5. Comentario adicional: ¿Hay algo más que te gustaría compartir sobre tu proceso de aprendizaje en esta unidad? ¿Algún momento de frustración o de “¡Aha!” que quieras destacar?
     
 Todos los "¡Aha!" los dije cada que el codigo funcionaba o identificaba la cantidad de estados que tiene un programa, y con la frustración, el primer dia de la unidad estuve algo decaido emocionalmente, pero fue por que me habia olvidado de asistir a la clase anterior a esta el miercoles pasando aun estando en la U, por lo que en parte pienso que es por eso que no tengo tan fresco lo que es una maquina de estados.
+
 
 
