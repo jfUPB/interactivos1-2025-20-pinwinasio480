@@ -34,9 +34,9 @@ Parte 2: reflexión sobre tu proceso (Metacognición)
    
 4. Ahora que entiendes el patrón de máquina de estados, ¿En qué otro tipo de proyecto o sistema de entretenimiento digital crees que podrías aplicarlo?
 
-#### Actividad 07
-##### Coevaluación
-##### Aprendiendo juntos: coevaluación constructiva
+### Actividad 07
+#### Coevaluación
+#### Aprendiendo juntos: coevaluación constructiva
 
 *Diseñar y programar es solo una parte del trabajo de un ingeniero; analizar y dar feedback sobre el trabajo de otros es igualmente importante. En esta actividad, revisarás el diseño y la implementación de la bomba temporizada de un compañero para ayudarle a mejorar y para ganar una nueva perspectiva.*
 
@@ -52,9 +52,9 @@ Parte 2: reflexión sobre tu proceso (Metacognición)
    
 5. Conversa con tu compañero sobre su diseño y código, y discutan sus comentarios.
    
-#### Actividad 08
-##### Feedback
-##### Mejorando la experiencia: tu feedback es clave
+### Actividad 08
+#### Feedback
+#### Mejorando la experiencia: tu feedback es clave
 
 *Mi objetivo es crear la mejor experiencia de aprendizaje posible, y tu perspectiva es esencial para lograrlo. Este es tu espacio para darme feedback honesto y directo sobre esta unidad, lo que me ayudará a refinarla para futuros estudiantes.*
 
@@ -72,3 +72,4 @@ Responde a las siguientes preguntas con total sinceridad. ¡Cada comentario es v
    
 5. Comentario adicional: ¿Hay algo más que te gustaría compartir sobre tu proceso de aprendizaje en esta unidad? ¿Algún momento de frustración o de “¡Aha!” que quieras destacar?
     
+
