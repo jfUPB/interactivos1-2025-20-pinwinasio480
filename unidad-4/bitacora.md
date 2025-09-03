@@ -2,7 +2,7 @@
 
 ## Código
 
-[Enlace a la aplicación a modificar](URL) <https://editor.p5js.org/generative-design/sketches/P_1_2_1_01>
+[Enlace a la aplicación a modificar](https://editor.p5js.org/generative-design/sketches/P_1_2_1_01) 
 
 Código a modificar:
 
@@ -126,5 +126,6 @@ Código modificado:
 ## Video
 
 [Video demostratativo](URL)
+
 
 
