@@ -74,3 +74,4 @@ Muestra una captura de pantalla del resultado de tu programa
 <img width="497" height="497" alt="image" src="https://github.com/user-attachments/assets/8abb448f-636b-45a7-94eb-cbe8015655f4" />
 
 
+

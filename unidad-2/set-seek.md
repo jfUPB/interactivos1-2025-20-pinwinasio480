@@ -255,3 +255,4 @@ Resultado esperado: happy -> si presiono 'a' (if button_a.was_pressed()), mostra
 
 Resultado obtenido: El sistema nuevamente pasa el vector de prueba.
 
+
