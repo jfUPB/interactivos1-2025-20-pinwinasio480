@@ -29,11 +29,15 @@ Actividad 2
 
 🧐🧪✍️ Captura el resultado del experimento anterior. ¿Por qué se ve este resultado?
 
+Cooldown de 100 que no se puede controlar
+
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 141833" src="https://github.com/user-attachments/assets/07d42ea4-94f8-440b-a4f6-624c0a5f3ab7" />
 
 Ahora cambia la opción de Mostrar datos como a Todo en Hex y vuelve a capturar el resultado.
 
 🧐🧪✍️ Captura el resultado del experimento anterior. Lo que ves ¿Cómo está relacionado con esta línea de código?
+
+Si, porque genera lineas en bucle.
 
 data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
 
@@ -44,6 +48,8 @@ data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
 ////
 
 🧐🧪✍️ Captura el resultado del experimento. ¿Cuántos bytes se están enviando por mensaje? ¿Cómo se relaciona esto con el formato '>2h2B'? ¿Qué significa cada uno de los bytes que se envían?
+
+Se envian 6 bytes, los ultimos dos son el true y false de los botones a y b.
 
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 142200" src="https://github.com/user-attachments/assets/c507e7f4-9347-4000-ae41-4a839314291a" />
 
@@ -58,7 +64,28 @@ data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
 
 Actividad 3
 
+🧐🧪✍️ Explica por qué en la unidad anterior teníamos que enviar la información delimitada y además marcada con un salto de línea y ahora no es necesario.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b4731043-9dfa-4b0a-a8a8-02cd8948e4e0" />
+
+Con lo anterior en mente, ahora vas a modificar el código de p5.js para leer los datos en formato binario. Sin embargo, al igual que con el código del micro:bit, te pediré que primero verifiquemos si los datos se están enviando correctamente.
+
+///////////////////////////
+
+CODIGO LARGO MODIFICADO
+
+🧐🧪✍️ Compara el código de la unidad anterior relacionado con la recepción de los datos seriales que ves ahora. ¿Qué cambios observas?
+
+Se elimina connectionInitialized = false
+
+Y en lugar de que los datos lea hasta que \n, ahora lee los 6 bytes.
+
+Ahora te voy a pedir que ejecutes el código de p5.js muchas veces y que estés muy atento a la consola. Lo que haremos es a tratar de reproducir un error que tiene este código. El error es de sincronización y se produce cuando los 6 bytes que lee el código de p5.js no corresponden a los mismos 6 bytes que envía el micro:bit.
+
+🧐🧪✍️ ¿Qué ves en la consola? ¿Por qué crees que se produce este error?
+
 Actividad 4
+
 
 
 
