@@ -115,8 +115,11 @@ Actividad 4
 
 Vas a documentar en tu bitácora todo el proceso de construcción de la aplicación, mostrando las pruebas intermedias que hiciste, los errores que encontraste y cómo los solucionaste.
 
+Primer error: no funciona el programa (python esta en binario y mi p5 no)
+Prueba 2: Hice modificaciones sugeridad por Gemini modificando el p5.js, sigue sin funcionar
 
 Vas a realizar múltiples experimentos analizando el comportamiento de la aplicación que construiste. Reporta el proceso de experimentación en la bitácora. Con estas evidencias debes demostrar que has comprendido los conceptos y técnicas vistas en esta unidad.
+
 
 
 
