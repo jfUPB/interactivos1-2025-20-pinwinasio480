@@ -12,7 +12,7 @@ R/ Para evitar que los datos se mezclen entre si y puedan ser separados. En la a
 
 ### 3. ¿Cómo funciona el framing?
 
-R/ 
+R/ El framing funciona enviando el datos al byte del inicio al byte del final para marcarlos.
 
 ### 4. ¿Qué es un carácter de sincronización?
 
@@ -61,7 +61,7 @@ R/ Signfica el límite hasta el que serialBuffer debe leer los datos.
 ### - En el código anterior qué hace la función shift y la instrucción continue? ¿Por qué?
 
 
-R/
+R/ No me acuerdo que hace Shift, pero pienso que continue hace que la operación del programa continue, esto si los valores de serialBuffer aun no son mayores o iguales a 8.
 
 
 ### - Si hay menos de 8 bytes qué hace la instrucción break? ¿Por qué?
@@ -76,7 +76,7 @@ R/ Porque maximo se pueden dar datos de 6 bytes, si se excede esa cantidad, se d
 
 ### - ¿Cuál es la diferencia entre slice y splice? ¿Por qué se usa splice justo después de slice?
 
-R/
+R/ Slice sirve para crear una copia de un arreglo mientras que Splice es la que puede modificar los arreglos, Splice va despues de Slice debido a que se necesita tener creado las copias de los arreglos primeros.
 
 ```Javascript
 
@@ -93,7 +93,7 @@ serialBuffer.splice(0, 8);
 
 ```
 
-R/
+R/ No me acuerdo su funcionamiento, supongo que lo que hace es que el valor de acc y val se reduce en base al porcentaje que se asigne (en este caso, 256%).
 
 ### - ¿Por qué se compara el checksum enviado con el calculado? ¿Para qué sirve esto?
 
@@ -106,11 +106,11 @@ if (computedChecksum !== receivedChecksum) {
 
 ```
 
-R/
+R/ Para verificar que ambos datos son enviados de igual forma, es decir, esto sirve para verificar que la información recibida por ambas partes sea igual.
 
 ### - En el código anterior qué hace la instrucción continue? ¿Por qué?
 
-R/
+R/ Continua el proceso del programa.
 
 ### - ¿Qué es un DataView? ¿Para qué se usa?
 
@@ -121,7 +121,7 @@ let view = new DataView(buffer);
 
 ```
 
-R/
+R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que ver con algo para poder ver los datos de las filas o columnas.
 
 ### - ¿Por qué es necesario hacer estas conversiones y no simplemente se toman tal cual los datos del buffer? 
 
@@ -133,4 +133,5 @@ R/
     microBitBState = view.getUint8(5) === 1;
 
 ```
-R/
+R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
