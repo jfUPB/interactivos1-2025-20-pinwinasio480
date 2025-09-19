@@ -132,22 +132,31 @@ Tras cambiarlo al modo Hex, en el que ahora los datos se leen en hexadecimales, 
 
 NOTA: Mi principal pregunta mientras redactaba este ejercicio, es: ¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un bit, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes.
 
-🧐🧪✍️ ¿Qué ventajas y desventajas ves en usar un formato binario en lugar de texto en ASCII?
+*No te parece que el resultado es un poco más difícil de leer que el texto en ASCII?*
 
-Voy a ponerlo en cuadro comparativo
+### 🧐🧪✍️ ¿Qué ventajas y desventajas ves en usar un formato binario en lugar de texto en ASCII?
+
+Voy a ponerlo en cuadro para que quede más organizado:
 
 |Ventajas|Desventajas|
-/////////////////////
-|
-////
+| --- | --- |
+|Cada paquete ocupa menos bytes (no es lo mismo 6 en binario a 10 o un poco más en ASCII)|A simple vista es dificl de leer (alguien que no tenga tanta experiencia se confundira para saber a que corresponde cada byte)|
+|Los mensajes se envian con mayor rapidez|Si un byte se pierde o desordena, sera dificl saber donde esta el error|
+|No hay caracteres extras en el formato|El micro:bit y p5 deben ponerse deacuerdo con el orden y tamaño de los datos|
 
-🧐🧪✍️ Captura el resultado del experimento. ¿Cuántos bytes se están enviando por mensaje? ¿Cómo se relaciona esto con el formato '>2h2B'? ¿Qué significa cada uno de los bytes que se envían?
+*Ahora te voy a proponer un experimento que te permitirá ver mejor los datos.*
 
-Se envian 6 bytes, los ultimos dos son el true y false de los botones a y b.
+<img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 142200" src="https://github.com/user-attachments/assets/c507e7f4-9347-4000-ae41-4a839314291a" />
+
+### 🧐🧪✍️ Captura el resultado del experimento. ¿Cuántos bytes se están enviando por mensaje? ¿Cómo se relaciona esto con el formato '>2h2B'? ¿Qué significa cada uno de los bytes que se envían?
+
+Al hacer el experimento, cuando se agita el micro:bit, además de que ya puedo tener el control de cuando enviar los datos en lugar de que se envien infinitamente, se puede apreciar mejor que se envian un total de 6 bytes. Con el formato >2h2B se relaciona porque en este formato se indica que: > manda en orden los bytes grandes primero, 2h son dos enteros cortos y 2B dos enteros sin signos, lo cual tiene sentido con lo que nos esta enviando en los mensajes, en los dos primeros bytes estan los valores de xValue, en el tercer y cuarto byte estan los valores de yValue, y en los últimos dos estan el True y False de 'a' y 'b' (el quinto byte es el de 'a' y el sexto es el de 'b', 01 indica True y 00 indica False).
 
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 142200" src="https://github.com/user-attachments/assets/c507e7f4-9347-4000-ae41-4a839314291a" />
 
 🧐🧪✍️ Recuerda de la unidad anterior que es posible enviar números positivos y negativos para los valores de xValue y yValue. ¿Cómo se verían esos números en el formato '>2h2B'?
+
+Si por defecto yo asigno:
 
 
 🧐🧪✍️ Captura el resultado del experimento. ¿Qué diferencias ves entre los datos en ASCII y en binario? ¿Qué ventajas y desventajas ves en usar un formato binario en lugar de texto en ASCII? ¿Qué ventajas y desventajas ves en usar un formato ASCII en lugar de binario?
@@ -213,6 +222,7 @@ Primer error: no funciona el programa (python esta en binario y mi p5 no)
 Prueba 2: Hice modificaciones sugeridad por Gemini modificando el p5.js, sigue sin funcionar
 
 Vas a realizar múltiples experimentos analizando el comportamiento de la aplicación que construiste. Reporta el proceso de experimentación en la bitácora. Con estas evidencias debes demostrar que has comprendido los conceptos y técnicas vistas en esta unidad.
+
 
 
 
