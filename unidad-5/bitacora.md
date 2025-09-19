@@ -47,7 +47,7 @@ Aquí nos indica que el valor de X esta en 200, el de Y en 100, que el botón 'a
 
 ### Muestra y explica la parte del código de p5.js donde lee los datos del micro:bit y los transforma en coordenadas de la pantalla.
 
-```Python
+```JavaScript
 
 if (port.availableBytes() > 0) {
   let data = port.readUntil("\n"); 
@@ -70,7 +70,7 @@ Si vamos parte por parte, el 'let = data' pide al programa usar framing para lee
 ### ¿Cómo se generan los eventos A pressed y B released que se generan en p5.js a partir de los datos que envía el micro:bit?
 
 
-```Python
+```JavaScript
 
 function updateButtonStates(newAState, newBState) {
   if (newAState === true && prevmicroBitAState === false) {
@@ -102,26 +102,43 @@ Si newAState pasa de false → true (cuando 'a' se presiona), se dibujaran líne
 
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 141458" src="https://github.com/user-attachments/assets/71930c94-f176-4bfd-a1b9-ba7eb5bd0b65" />
 
-Actividad 2
+## Actividad 2
 
-🧐🧪✍️ Captura el resultado del experimento anterior. ¿Por qué se ve este resultado?
-
-Cooldown de 100 que no se puede controlar
+*Abre la aplicación, configura el puerto, deja los valores por defecto y presiona Conectar. Selecciona el puerto del micro:bit (mbed Serial port) y presiona Conectar. Luego, en la sección de Recepción de Datos, en Mostrar datos como, selecciona Texto.*
 
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 141833" src="https://github.com/user-attachments/assets/07d42ea4-94f8-440b-a4f6-624c0a5f3ab7" />
 
-Ahora cambia la opción de Mostrar datos como a Todo en Hex y vuelve a capturar el resultado.
+### 🧐🧪✍️ Captura el resultado del experimento anterior. ¿Por qué se ve este resultado?
 
-🧐🧪✍️ Captura el resultado del experimento anterior. Lo que ves ¿Cómo está relacionado con esta línea de código?
+Dado a que no se un motivo exacto, y aqui le pedi a la inteligencia artificial que me explicara respecto al tema, en base a lo que entendi, esto se debe a que los datos que se estan mostrando están en binario y no en ASCII, cada mensaje ocupa 6 bytes (en formato 2h2B para indicar que se envian dos enteros cortos y dos enteros sin signo) que representan números y booleanos.
 
-Si, porque genera lineas en bucle.
+El UART (el hardware del micro:bit) interpreta cada byte como un carácter de texto en el modo del mismo nombre y dado a que la mayoría de los bytes no corresponden a códigos ASCII, como se puede apreciar en la captura de arriba, se pueden observar signos extraños con simbolo de pregunta como rombos negros o cuadros sin relleno y letras o caracteres aleatorios.
 
-data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
+Y dado a que el no hay un control en Python en ese momento para regular cuando enviar cada dato, estos se enviaran en forma de bucle cada 100 ms (correspondientes a la cantidad de colocada en sleep como cooldown).
+
+*Ahora cambia la opción de Mostrar datos como a Todo en Hex y vuelve a capturar el resultado.*
 
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 141919" src="https://github.com/user-attachments/assets/e5ff4fb2-e93e-4b07-a71e-384db056b992" />
 
+### 🧐🧪✍️ Captura el resultado del experimento anterior. Lo que ves ¿Cómo está relacionado con esta línea de código?
+
+```Python
+
+data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
+
+```
+
+Tras cambiarlo al modo Hex, en el que ahora los datos se leen en hexadecimales, lo transmitido corresponde exactamente a la linea de código señalada, esto debido a que la instrucción empaqueta los valores de las variables en bloques binarios compuestos por dos enteros de 16 bits (los de xValue y yValue) y dos enteros de 6 bits (de aState y bState), lo que en total da como resultado 6 bytes. Por lo que en otras palabras, en modo texto (ejercicio anterior) mostrara carcateres y simbolos extraños dado a que muchos de los valores en binario no son legibles, pero al estar en modo hex, se mostraran los valores reales en la misma organización del formato >2h2B.
+
+NOTA: Mi principal pregunta mientras redactaba este ejercicio, es: ¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un bit, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes.
+
 🧐🧪✍️ ¿Qué ventajas y desventajas ves en usar un formato binario en lugar de texto en ASCII?
 
+Voy a ponerlo en cuadro comparativo
+
+|Ventajas|Desventajas|
+/////////////////////
+|
 ////
 
 🧐🧪✍️ Captura el resultado del experimento. ¿Cuántos bytes se están enviando por mensaje? ¿Cómo se relaciona esto con el formato '>2h2B'? ¿Qué significa cada uno de los bytes que se envían?
@@ -196,6 +213,7 @@ Primer error: no funciona el programa (python esta en binario y mi p5 no)
 Prueba 2: Hice modificaciones sugeridad por Gemini modificando el p5.js, sigue sin funcionar
 
 Vas a realizar múltiples experimentos analizando el comportamiento de la aplicación que construiste. Reporta el proceso de experimentación en la bitácora. Con estas evidencias debes demostrar que has comprendido los conceptos y técnicas vistas en esta unidad.
+
 
 
 
