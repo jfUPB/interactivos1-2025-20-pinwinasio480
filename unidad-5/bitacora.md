@@ -52,7 +52,7 @@ R/ De lo que recuerdo en relación a como funciona concatenar, se juntan los dat
 ```
 
 
-R/ 
+R/  Por qué la cantidad de bytes por defecto es más corta.
 
 ### - En el código anterior qué significa 0xaa?
 
@@ -134,5 +134,6 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
