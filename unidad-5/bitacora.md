@@ -3,7 +3,7 @@
 
 ## Actividad 1
 
-# Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?
+### Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?
 
 La comunicación entre ambas partes se basa principalmente en como el micro:bit envia los datos al computador por medio del UART Serial (por lo que he estado investigando, es el hardware utilizado en los micro:bits), siendo Python el sensor y P5 la interfaz y pantalla por parte del usuario.
 
@@ -22,22 +22,38 @@ data = "{},{},{},{}\n".format(xValue, yValue, aState,bState)
 uart.write(data)
 
 ```
+Viendo esto, me he llegado a preguntar: Considerando que el micro:bit cuenta con más funciones como "Shake", "Speaker" o presionar el Pin (Touch) (no recuerdo con exactitud si las versiones que utilizamos en clase cuentan con esto último), alguno de los cuatro sensores que estan presentes en ASCII se pueden reemplazar con algunos de los que mencione? Me da curiosidad imaginar que fuese posible cambiar los mensajes de True y False de 'a' y 'b' por mensajes para indicar True o False de cuando se agita el micro:bit o se oprime el pin del mismo.
 
-El micro:bit esta enviando los datos referentes para la verificación de si se oprimieron los botones a y b, asi como si el acelerometro se mueve en las coordenadas X o Y.
+### ¿Cómo es la estructura del protocolo ASCII usado?
 
-¿Cómo es la estructura del protocolo ASCII usado?
+La estrucuta de ASCII se basa en mensajes de texto con formato CVS (es un tipo de extensión en donde los valores son separados por comas).
+
+Si volvemos a revisar el codigo de Python:
+
+```Python
+
+<xValue>,<yValue>,<AState>,<BState>\n
+
+```
+
+Un ejemplo de como se pueden ver estos valores seria:
+
+```Python
+
+200, 100, True, False\n
+
+```
+Aquí nos indica que el valor de X esta en 200, el de Y en 100, que el botón 'a' esta oprimido pero el de 'b' no, y el "\n" al final es para indicar el fin del mensaje (esto vendria siendo framing, en las actividades posteriores se hara uso de framing).
+
+### Muestra y explica la parte del código de p5.js donde lee los datos del micro:bit y los transforma en coordenadas de la pantalla.
 
 
 
-Muestra y explica la parte del código de p5.js donde lee los datos del micro:bit y los transforma en coordenadas de la pantalla.
+### ¿Cómo se generan los eventos A pressed y B released que se generan en p5.js a partir de los datos que envía el micro:bit?
 
 
 
-¿Cómo se generan los eventos A pressed y B released que se generan en p5.js a partir de los datos que envía el micro:bit?
-
-
-
-Capturas de pantalla de los algunos dibujos que hayas hecho con el sketch.
+### Capturas de pantalla de los algunos dibujos que hayas hecho con el sketch.
 
 <img width="1919" height="1069" alt="Captura de pantalla 2025-09-12 141342" src="https://github.com/user-attachments/assets/a1614e94-1dff-47f7-ab0d-d773d9e92173" />
 
@@ -137,6 +153,7 @@ Primer error: no funciona el programa (python esta en binario y mi p5 no)
 Prueba 2: Hice modificaciones sugeridad por Gemini modificando el p5.js, sigue sin funcionar
 
 Vas a realizar múltiples experimentos analizando el comportamiento de la aplicación que construiste. Reporta el proceso de experimentación en la bitácora. Con estas evidencias debes demostrar que has comprendido los conceptos y técnicas vistas en esta unidad.
+
 
 
 
