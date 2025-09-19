@@ -1,9 +1,11 @@
 
 # Evidencias de la unidad 5
 
-Actividad 1
+## Actividad 1
 
 Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?
+
+
 
 El micro:bit esta enviando los datos referentes para la verificación de si se oprimieron los botones a y b, asi como si el acelerometro se mueve en las coordenadas X o Y.
 
@@ -119,6 +121,7 @@ Primer error: no funciona el programa (python esta en binario y mi p5 no)
 Prueba 2: Hice modificaciones sugeridad por Gemini modificando el p5.js, sigue sin funcionar
 
 Vas a realizar múltiples experimentos analizando el comportamiento de la aplicación que construiste. Reporta el proceso de experimentación en la bitácora. Con estas evidencias debes demostrar que has comprendido los conceptos y técnicas vistas en esta unidad.
+
 
 
 
