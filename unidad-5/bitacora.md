@@ -24,7 +24,7 @@
 
 ### 6. En la función readSerialData() del programa en p5.js:
 
-- ¿Qué hace la función concat? ¿Por qué?
+### - ¿Qué hace la función concat? ¿Por qué?
 
 ```Javascript
 
@@ -37,7 +37,7 @@ function readSerialData() {
 
 ```
 
-- En la función readSerialData() tenemos un bucle que recorre el buffer solo si este tiene 8 o más bytes ¿Por qué?
+### - En la función readSerialData() tenemos un bucle que recorre el buffer solo si este tiene 8 o más bytes ¿Por qué?
 
 ```Javascript
 
@@ -49,11 +49,11 @@ function readSerialData() {
 
 ```
 
-- En el código anterior qué significa 0xaa?
+### - En el código anterior qué significa 0xaa?
 
-- En el código anterior qué hace la función shift y la instrucción continue? ¿Por qué?
+### - En el código anterior qué hace la función shift y la instrucción continue? ¿Por qué?
 
-- Si hay menos de 8 bytes qué hace la instrucción break? ¿Por qué?
+### - Si hay menos de 8 bytes qué hace la instrucción break? ¿Por qué?
 
 ```Javascript
 
@@ -61,7 +61,7 @@ function readSerialData() {
 
 ```
 
-- ¿Cuál es la diferencia entre slice y splice? ¿Por qué se usa splice justo después de slice?
+### - ¿Cuál es la diferencia entre slice y splice? ¿Por qué se usa splice justo después de slice?
 
 ```Javascript
 
@@ -70,7 +70,7 @@ serialBuffer.splice(0, 8);
 
 ```
 
-- A la siguiente parte del código se le conoce como programación funcional ¿Cómo opera la función reduce?
+### - A la siguiente parte del código se le conoce como programación funcional ¿Cómo opera la función reduce?
 
 ```Javascript
 
@@ -78,7 +78,7 @@ serialBuffer.splice(0, 8);
 
 ```
 
-- ¿Por qué se compara el checksum enviado con el calculado? ¿Para qué sirve esto?
+### - ¿Por qué se compara el checksum enviado con el calculado? ¿Para qué sirve esto?
 
 ```Javascript
 
@@ -89,9 +89,9 @@ if (computedChecksum !== receivedChecksum) {
 
 ```
 
-- En el código anterior qué hace la instrucción continue? ¿Por qué?
+### - En el código anterior qué hace la instrucción continue? ¿Por qué?
 
-- ¿Qué es un DataView? ¿Para qué se usa?
+### - ¿Qué es un DataView? ¿Para qué se usa?
 
 ```Javascript
 
@@ -100,7 +100,7 @@ let view = new DataView(buffer);
 
 ```
 
-¿Por qué es necesario hacer estas conversiones y no simplemente se toman tal cual los datos del buffer? 
+### - ¿Por qué es necesario hacer estas conversiones y no simplemente se toman tal cual los datos del buffer? 
 
 ```Javascript
 
@@ -110,3 +110,4 @@ let view = new DataView(buffer);
     microBitBState = view.getUint8(5) === 1;
 
 ```
+
