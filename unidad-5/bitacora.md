@@ -47,11 +47,54 @@ Aquí nos indica que el valor de X esta en 200, el de Y en 100, que el botón 'a
 
 ### Muestra y explica la parte del código de p5.js donde lee los datos del micro:bit y los transforma en coordenadas de la pantalla.
 
+```Python
 
+if (port.availableBytes() > 0) {
+  let data = port.readUntil("\n"); 
+  if (data) {
+    data = data.trim();            
+    let values = data.split(",");  
+    if (values.length == 4) {
+      microBitX = int(values[0]) + windowWidth / 2;
+      microBitY = int(values[1]) + windowHeight / 2;
+      microBitAState = values[2].toLowerCase() === "true";
+      microBitBState = values[3].toLowerCase() === "true";
+      updateButtonStates(microBitAState, microBitBState);
+    }
+  }
+}
+
+```
+Si vamos parte por parte, el 'let = data' pide al programa usar framing para leer los mensajes completos (como mencione anteriormente '\n' indica el final del mensaje, esto se refleja en: readUntil("\n")); data.trim() lo que hace es limpiar posibles espacios o saltos de líneas extras (en términos informales, sirve para no dejar cabos sueltos); data.split(",") convierte el string en un arreglo conformado por cuatro valores, que son los de los cuatro sensores, vuelvo a repetir, los acelerometros de X y Y y los estados de 'a' y 'b', nunca viene mal hacer un recordatorio. Ya pasando a la parte de conversión, int() es para las coordenadas del acelerómetro (números enteros); === "true" en microBitAState y microBitBState funciona para los estados de 'a' y 'b' para los True y False; y los ajustes de las coordenadas mencionados anteriormente +  windowWidth/2 y + windowHeight/2 se encargan de centrar los dibujos en la pantalla, como resultado, los datos del micro:bit se mapean a coordenadas y estados en p5.js.
 
 ### ¿Cómo se generan los eventos A pressed y B released que se generan en p5.js a partir de los datos que envía el micro:bit?
 
 
+```Python
+
+function updateButtonStates(newAState, newBState) {
+  if (newAState === true && prevmicroBitAState === false) {
+    lineModuleSize = random(50, 160);
+    clickPosX = microBitX;
+    clickPosY = microBitY;
+    print("A pressed");
+  }
+
+  if (newBState === false && prevmicroBitBState === true) {
+    c = color(random(255), random(255), random(255), random(80, 100));
+    print("B released");
+  }
+
+  prevmicroBitAState = newAState;
+  prevmicroBitBState = newBState;
+}
+
+
+```
+
+Ambos eventos se generan de la misma manera, pero con diferentes funciones:
+
+Si newAState pasa de false → true (cuando 'a' se presiona), se dibujaran líneas circulares que siguen el movimiento del micro:bit, o mejor dicho, el movimiento del acelerómetro. Y si newBState pasa de false → true (cuando 'b' se presiona), el color random de c correspondiente a las líneas cambiara. Cabe aclarar que mientras 'a' es Pressed, 'b' es Released, por lo que entiendo, Pressed es cuando se oprime, y Released es cuando se deja de oprimir el botón.
 
 ### Capturas de pantalla de los algunos dibujos que hayas hecho con el sketch.
 
@@ -153,6 +196,7 @@ Primer error: no funciona el programa (python esta en binario y mi p5 no)
 Prueba 2: Hice modificaciones sugeridad por Gemini modificando el p5.js, sigue sin funcionar
 
 Vas a realizar múltiples experimentos analizando el comportamiento de la aplicación que construiste. Reporta el proceso de experimentación en la bitácora. Con estas evidencias debes demostrar que has comprendido los conceptos y técnicas vistas en esta unidad.
+
 
 
 
