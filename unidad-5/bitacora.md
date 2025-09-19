@@ -4,7 +4,7 @@
 
 ### 1. En la unidad anterior abordaste la construcción de un protocolo ASCII. En esta unidad realizaste lo propio con un protocolo binario. Realiza una tabla donde compares, según la aplicación que modificaste en la fase de aplicación de ambas unidades, los siguientes aspectos: eficiencia, velocidad, facilidad, usos de recursos. Justifica con ejemplos concretos tomados de las aplicaciones modificadas.
 
-R/ 
+R/ No me acuerdo de las comparaciones de los aspectos.
 
 ### 2. ¿Por qué fue necesario introducir framing en el protocolo binario?
 
@@ -16,11 +16,11 @@ R/ El framing funciona enviando el datos al byte del inicio al byte del final pa
 
 ### 4. ¿Qué es un carácter de sincronización?
 
-R/ 
+R/ Supongo que es un carácter que me permite hacer que tanto el micro:bit como el p5 se puedan sincronizar de forma adecuada.
 
 ### 5. ¿Qué es el checksum y para qué sirve?
 
-R/
+R/ La función cheksum si mal no recuerdo, sirve para verificar si los datos enviados no han sido alterado son diferentes.
 
 ### 6. En la función readSerialData() del programa en p5.js:
 
@@ -106,7 +106,7 @@ if (computedChecksum !== receivedChecksum) {
 
 ```
 
-R/ Para verificar que ambos datos son enviados de igual forma, es decir, esto sirve para verificar que la información recibida por ambas partes sea igual.
+R/ Para verificar que ambos datos son enviados de igual forma, es decir, esto sirve para verificar que la información recibida por ambas partes sea igual o no haya sido alterado.
 
 ### - En el código anterior qué hace la instrucción continue? ¿Por qué?
 
@@ -134,4 +134,5 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
