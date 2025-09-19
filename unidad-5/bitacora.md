@@ -3,9 +3,25 @@
 
 ## Actividad 1
 
-Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?
+# Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?
 
+La comunicación entre ambas partes se basa principalmente en como el micro:bit envia los datos al computador por medio del UART Serial (por lo que he estado investigando, es el hardware utilizado en los micro:bits), siendo Python el sensor y P5 la interfaz y pantalla por parte del usuario.
 
+Pasando a los datos que se envian, los cuales son cuatro sensores del mismo micro:bit, cada mensaje contiene lo siguiente:
+
+- xValue (Acelerometro en X)
+- yValue (Acelerometro en Y)
+- aState (estado True o False del botón 'a')
+- bState (estado True o False del botón 'b')
+
+Si vemos el código de Python proporcionado por el profesor, esto se encuentra en esta linea:
+
+```Python
+
+data = "{},{},{},{}\n".format(xValue, yValue, aState,bState)
+uart.write(data)
+
+```
 
 El micro:bit esta enviando los datos referentes para la verificación de si se oprimieron los botones a y b, asi como si el acelerometro se mueve en las coordenadas X o Y.
 
@@ -121,6 +137,7 @@ Primer error: no funciona el programa (python esta en binario y mi p5 no)
 Prueba 2: Hice modificaciones sugeridad por Gemini modificando el p5.js, sigue sin funcionar
 
 Vas a realizar múltiples experimentos analizando el comportamiento de la aplicación que construiste. Reporta el proceso de experimentación en la bitácora. Con estas evidencias debes demostrar que has comprendido los conceptos y técnicas vistas en esta unidad.
+
 
 
 
