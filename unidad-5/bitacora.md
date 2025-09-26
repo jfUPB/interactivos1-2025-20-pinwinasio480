@@ -1,11 +1,33 @@
 # Evidencias de la unidad 5
 
-## Actividad 5 (lo me quedo pendiente por redactar)
+## Lo me quedo pendiente por redacatar o responder de las actividades 2 y 3
+
+### Actividad 2
+
+🧐🧪✍️ Captura el resultado del experimento. ¿Qué diferencias ves entre los datos en ASCII y en binario? ¿Qué ventajas y desventajas ves en usar un formato binario en lugar de texto en ASCII? ¿Qué ventajas y desventajas ves en usar un formato ASCII en lugar de binario?
+
+Cuando agito el micro:bit, la forma en la que los datos son mostrados en la terminal cambia, en el modo HEX me muestra más de 20 bytes por cada Shake (lo más destacable es que cada '0a' indica como si fuera un punto seguido), inicialmente tuve mis dudas sobre porque ya no solo me mostraba 6 bytes, aunque por lo que tengo entendido hasta el momento, es porque primero se envia el paquete binario de 6 bytes de >2h2B, despues se envia una cadena ASCII "ASCII:\n" y posteriormente en texto CSV la representación de los mismos valores. Ya cuando fui al modo Texto, los 6 bytes aparecen como signos como rombos y cuadros con signo de pregunta, seguido de ASCII: y los valores legibles en texto como se puede apreciar en las imagenes de arriba
+
+En cuanto a ventajas y desventajas:
+
+|Ventajas de ASCII|Desventajas de ASCII|Ventajas de Binario|Desventajas de Binario1
+| --- | --- | --- | --- |
+|Es más facil de entender debido a que esta en texto los datos|Ocupa más espacio de datos como "-2040"|Ocupa menos espacio, solo se transmiten los 6 bytes necesarios|No es muy legible a primera vista|
+
+🧐🧪✍️ Recuerda de la unidad anterior que es posible enviar números positivos y negativos para los valores de xValue y yValue. ¿Cómo se verían esos números en el formato '>2h2B'?
+
+Un ejemplo siendo xValue negativo (-100), yValue (200), aState True y bState False:
+
+>2h2B
+
+FF 9C   00 C8   01   00
+
+### Actividad 3
 
 
 ## Autoevaluación:
 
-En base a lo que desarolle durante la unidad, acontinuación mencionare la nota que me coloco en cada parametro, asi como la sumatoria total:
+En base a lo que desarolle durante la unidad (y de paso en el reflect para poder mejorar mi nota en base a los criterios)w, acontinuación mencionare la nota que me coloco en cada parametro, asi como la sumatoria total:
 
 | Criterios |  Inicial (0.0 - 1.9) | En desarrollo (2.0 - 3.4) | Logrado (3.5 - 4.4) | Excelente (4.5 - 5.0) | 
 | --- | --- | --- | --- | --- | 
@@ -184,6 +206,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
