@@ -1,8 +1,22 @@
 # Evidencias de la unidad 5
 
-## REFLECT
 
-prueba 1 2 3
+
+## Autoevaluación:
+
+En base a lo que desarolle durante la unidad, acontinuación mencionare la nota que me coloco en cada parametro, asi como la sumatoria total:
+
+| Criterios |  Inicial (0.0 - 1.9) | En desarrollo (2.0 - 3.4) | Logrado (3.5 - 4.4) | Excelente (4.5 - 5.0) | Mi nota |
+| --- | --- | --- | --- | --- | --- |
+| 1. Profundidad de la Indagación | Las preguntas formuladas (o la falta de ellas) son superficiales y la exploración se limita a seguir las instrucciones sin cuestionar el “porqué” de las soluciones. | Se formulan preguntas relevantes, pero se enfocan principalmente en el “cómo” funcionan las partes del código (ej. “¿Cómo usar struct.pack?”). La indagación se centra en resolver problemas técnicos inmediatos. | Se formulan preguntas que comparan y contrastan los protocolos (ej. “¿Cuántos bytes ahorro realmente con el protocolo binario en mi caso específico?”). Se investiga la causa raíz de los errores (ej. “¿Por qué ocurre el error de sincronización?”). | Se formulan preguntas que exploran el diseño y sus implicaciones (ej. “¿Qué otras estrategias de framing existen y cuáles son sus ventajas?” o “¿En qué escenarios un protocolo ASCII podría ser preferible a uno binario, a pesar de su ineficiencia?”). La indagación demuestra una curiosidad por los principios de la comunicación de datos. |  |
+| 2. Calidad de la Experimentación | Los experimentos se limitan a la simple ejecución del código proporcionado o de las modificaciones indicadas, sin un análisis sistemático. | Se realizan los experimentos guiados y se utiliza la terminal serial o la consola de p5.js para observar los datos, pero sin un análisis profundo de lo observado. | Se diseñan y ejecutan experimentos deliberados y efectivos para verificar hipótesis o el funcionamiento de componentes específicos (ej. enviar valores conocidos para validar la lectura, provocar un error de checksum para verificar su manejo). | Se diseñan experimentos precisos y creativos que no solo verifican, sino que aíslan y demuestran la necesidad de ciertas soluciones o las sutilezas de la comunicación. Por ejemplo, se diseña un caso de prueba para reproducir de forma consistente el error de sincronización antes de implementar la solución de framing. |  |
+| 3. Análisis y Reflexión | La bitácora es un registro de acciones sin análisis. Se describe lo que se ve (ej. “salen caracteres raros en la terminal”) pero no se explica la causa. Las conclusiones son incorrectas o no están respaldadas por evidencia. | La bitácora describe los resultados, pero la reflexión es superficial. Se identifica el problema (ej. “los datos llegan mal”) pero no se articula claramente por qué una solución (como el framing) lo resuelve a nivel de bytes. | La bitácora conecta claramente la evidencia (capturas de la terminal, logs de la consola, depurador) con la explicación teórica. Se analiza por qué un protocolo sin framing es frágil y cómo la combinación de header y checksum aporta robustez. Se analizan los errores como parte del aprendizaje. | La bitácora demuestra una reflexión profunda que va más allá de la simple verificación. Se analiza el trade-off entre eficiencia de transmisión y complejidad de implementación, y se construye un modelo mental robusto del flujo de datos, desde el microcontrolador hasta la aplicación de p5.js. |  |
+| 4. Apropiación y Articulación de Conceptos | La bitácora muestra una definición incorrecta o copiada de los conceptos (ej. framing, checksum, DataView). No hay evidencia de comprensión personal. | La bitácora explica los conceptos de forma básica. Se entiende que el protocolo binario “es más rápido”, pero no se puede explicar por qué en términos de representación de datos o flujo de bytes. | La bitácora demuestra una comprensión clara y correcta de cada componente del protocolo. Se explica con palabras propias la función del header, del checksum, del DataView en JavaScript y del empaquetado con struct en MicroPython. | La bitácora demuestra una maestría conceptual. Se explican los conceptos como un sistema interdependiente. Se articula con total claridad y usando analogías propias por qué la comunicación serial es un flujo de bytes asíncrono y cómo un protocolo impone orden sobre ese “caos” para garantizar una comunicación fiable y eficiente. |  |
+
+Sumatoria total de la nota: 
+
+
+## REFLECT
 
 ### 1. En la unidad anterior abordaste la construcción de un protocolo ASCII. En esta unidad realizaste lo propio con un protocolo binario. Realiza una tabla donde compares, según la aplicación que modificaste en la fase de aplicación de ambas unidades, los siguientes aspectos: eficiencia, velocidad, facilidad, usos de recursos. Justifica con ejemplos concretos tomados de las aplicaciones modificadas.
 
@@ -136,6 +150,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
