@@ -26,19 +26,16 @@ Además, en la actividad 2, mientras redacta los ejercicios, me hice la pregunta
 
 #### 2. Calidad de la Experimentación
 
-Nota: 3.8
+Nota: 4.2
 
-Motivo: En cada una de las 3 actividades realice los experimentos, en cada una adjunte los procesos que conllevaron por medio de capturas de pantalla, incluso en la actividad 3 durante un error de código que solicitaba reproducir el programa de p5 varias veces, menciona que en la consola podía observar un estado true del botón ‘a’, mencione que se debía a que al no tener el framing, provoca que los datos no están sincronizados, incluso lo relacione con una señal fantasma, debido a que está ahí, pero no debería estar. 
-
-Así mismo, en la actividad 2 no solo me limite a mirar lo que me salía en la terminal, sino que cuando se me preguntó “¿Cuántos bytes se están enviando por mensaje? ¿Cómo se relaciona esto con el formato '>2h2B'? ¿Qué significa cada uno de los bytes que se envían?” decidí agitar unas cuantas veces el micro:bit y mostrarlos en las capturas para confirmar hipótesis personales en relación a los estados del microbit y valores, más que todo referente a los estados de los botones ‘a’ y ‘b’, en donde yo mencione y citó “El quinto byte es el de 'a' y el sexto es el de 'b', 01 indica True y 00 indica False”.
+Motivo: En cada una de las 3 actividades realice los experimentos, en cada una adjunte los procesos que conllevaron por medio de capturas de pantalla, incluso en la actividad 2 no solo me limite a mirar lo que me salía en la terminal, sino que cuando se me preguntó “¿Cuántos bytes se están enviando por mensaje? ¿Cómo se relaciona esto con el formato '>2h2B'? ¿Qué significa cada uno de los bytes que se envían?” decidí agitar unas cuantas veces el micro:bit y mostrarlos en las capturas para confirmar hipótesis personales en relación a los estados del microbit y valores, más que todo referente a los estados de los botones ‘a’ y ‘b’, en donde yo mencione y citó “El quinto byte es el de 'a' y el sexto es el de 'b', 01 indica True y 00 indica False”.
 
 #### 3. Análisis y Reflexión
 
-Nota: 4.0
+Nota: 3.4
 
-La bitácora conecta claramente la evidencia (capturas de la terminal, logs de la consola, depurador) con la explicación teórica. Se analiza por qué un protocolo sin framing es frágil y cómo la combinación de header y checksum aporta robustez. Se analizan los errores como parte del aprendizaje.
-
-Motivo:
+Motivo: En la actividad 3 durante un error de código que solicitaba reproducir el programa de p5 varias veces (y cito, para no alargar tanto explicando el codigo, *"se elimino connectionInitialized = false
+y en lugar de que los datos lea hasta \n, ahora lee los 6 bytes"*), podía observar en la consola un estado true del botón ‘a’ que no debería aparecer, mencione que se debía a que al no tener el framing, provoca que los datos no están sincronizados, incluso lo relacione con una señal fantasma, debido a que está ahí, pero no debería estar (en la imagen de la bitacora, este error aparecia afuera de Micro:Bit ready to draw, aclaro que me coloco esta nota ya que no termine de ahondar en otros analisis como los que pedian, especialmente relacionados a Checksum.
 
 #### 4. Apropiación y Articulación de Conceptos
 
@@ -49,7 +46,7 @@ La bitácora demuestra una comprensión clara y correcta de cada componente del 
 Motivo:
 
 
-Nota definitiva: 
+Nota definitiva: 4.05 (4.0)
 
 
 ## REFLECT
@@ -186,6 +183,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
