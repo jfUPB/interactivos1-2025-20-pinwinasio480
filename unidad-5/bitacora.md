@@ -6,14 +6,50 @@
 
 En base a lo que desarolle durante la unidad, acontinuación mencionare la nota que me coloco en cada parametro, asi como la sumatoria total:
 
-| Criterios |  Inicial (0.0 - 1.9) | En desarrollo (2.0 - 3.4) | Logrado (3.5 - 4.4) | Excelente (4.5 - 5.0) | Mi nota |
-| --- | --- | --- | --- | --- | --- |
-| 1. Profundidad de la Indagación | Las preguntas formuladas (o la falta de ellas) son superficiales y la exploración se limita a seguir las instrucciones sin cuestionar el “porqué” de las soluciones. | Se formulan preguntas relevantes, pero se enfocan principalmente en el “cómo” funcionan las partes del código (ej. “¿Cómo usar struct.pack?”). La indagación se centra en resolver problemas técnicos inmediatos. | Se formulan preguntas que comparan y contrastan los protocolos (ej. “¿Cuántos bytes ahorro realmente con el protocolo binario en mi caso específico?”). Se investiga la causa raíz de los errores (ej. “¿Por qué ocurre el error de sincronización?”). | Se formulan preguntas que exploran el diseño y sus implicaciones (ej. “¿Qué otras estrategias de framing existen y cuáles son sus ventajas?” o “¿En qué escenarios un protocolo ASCII podría ser preferible a uno binario, a pesar de su ineficiencia?”). La indagación demuestra una curiosidad por los principios de la comunicación de datos. |  |
-| 2. Calidad de la Experimentación | Los experimentos se limitan a la simple ejecución del código proporcionado o de las modificaciones indicadas, sin un análisis sistemático. | Se realizan los experimentos guiados y se utiliza la terminal serial o la consola de p5.js para observar los datos, pero sin un análisis profundo de lo observado. | Se diseñan y ejecutan experimentos deliberados y efectivos para verificar hipótesis o el funcionamiento de componentes específicos (ej. enviar valores conocidos para validar la lectura, provocar un error de checksum para verificar su manejo). | Se diseñan experimentos precisos y creativos que no solo verifican, sino que aíslan y demuestran la necesidad de ciertas soluciones o las sutilezas de la comunicación. Por ejemplo, se diseña un caso de prueba para reproducir de forma consistente el error de sincronización antes de implementar la solución de framing. |  |
-| 3. Análisis y Reflexión | La bitácora es un registro de acciones sin análisis. Se describe lo que se ve (ej. “salen caracteres raros en la terminal”) pero no se explica la causa. Las conclusiones son incorrectas o no están respaldadas por evidencia. | La bitácora describe los resultados, pero la reflexión es superficial. Se identifica el problema (ej. “los datos llegan mal”) pero no se articula claramente por qué una solución (como el framing) lo resuelve a nivel de bytes. | La bitácora conecta claramente la evidencia (capturas de la terminal, logs de la consola, depurador) con la explicación teórica. Se analiza por qué un protocolo sin framing es frágil y cómo la combinación de header y checksum aporta robustez. Se analizan los errores como parte del aprendizaje. | La bitácora demuestra una reflexión profunda que va más allá de la simple verificación. Se analiza el trade-off entre eficiencia de transmisión y complejidad de implementación, y se construye un modelo mental robusto del flujo de datos, desde el microcontrolador hasta la aplicación de p5.js. |  |
-| 4. Apropiación y Articulación de Conceptos | La bitácora muestra una definición incorrecta o copiada de los conceptos (ej. framing, checksum, DataView). No hay evidencia de comprensión personal. | La bitácora explica los conceptos de forma básica. Se entiende que el protocolo binario “es más rápido”, pero no se puede explicar por qué en términos de representación de datos o flujo de bytes. | La bitácora demuestra una comprensión clara y correcta de cada componente del protocolo. Se explica con palabras propias la función del header, del checksum, del DataView en JavaScript y del empaquetado con struct en MicroPython. | La bitácora demuestra una maestría conceptual. Se explican los conceptos como un sistema interdependiente. Se articula con total claridad y usando analogías propias por qué la comunicación serial es un flujo de bytes asíncrono y cómo un protocolo impone orden sobre ese “caos” para garantizar una comunicación fiable y eficiente. |  |
+| Criterios |  Inicial (0.0 - 1.9) | En desarrollo (2.0 - 3.4) | Logrado (3.5 - 4.4) | Excelente (4.5 - 5.0) | 
+| --- | --- | --- | --- | --- | 
+| 1. Profundidad de la Indagación | Las preguntas formuladas (o la falta de ellas) son superficiales y la exploración se limita a seguir las instrucciones sin cuestionar el “porqué” de las soluciones. | Se formulan preguntas relevantes, pero se enfocan principalmente en el “cómo” funcionan las partes del código (ej. “¿Cómo usar struct.pack?”). La indagación se centra en resolver problemas técnicos inmediatos. | Se formulan preguntas que comparan y contrastan los protocolos (ej. “¿Cuántos bytes ahorro realmente con el protocolo binario en mi caso específico?”). Se investiga la causa raíz de los errores (ej. “¿Por qué ocurre el error de sincronización?”). | Se formulan preguntas que exploran el diseño y sus implicaciones (ej. “¿Qué otras estrategias de framing existen y cuáles son sus ventajas?” o “¿En qué escenarios un protocolo ASCII podría ser preferible a uno binario, a pesar de su ineficiencia?”). La indagación demuestra una curiosidad por los principios de la comunicación de datos. | 
+| 2. Calidad de la Experimentación | Los experimentos se limitan a la simple ejecución del código proporcionado o de las modificaciones indicadas, sin un análisis sistemático. | Se realizan los experimentos guiados y se utiliza la terminal serial o la consola de p5.js para observar los datos, pero sin un análisis profundo de lo observado. | Se diseñan y ejecutan experimentos deliberados y efectivos para verificar hipótesis o el funcionamiento de componentes específicos (ej. enviar valores conocidos para validar la lectura, provocar un error de checksum para verificar su manejo). | Se diseñan experimentos precisos y creativos que no solo verifican, sino que aíslan y demuestran la necesidad de ciertas soluciones o las sutilezas de la comunicación. Por ejemplo, se diseña un caso de prueba para reproducir de forma consistente el error de sincronización antes de implementar la solución de framing. |  
+| 3. Análisis y Reflexión | La bitácora es un registro de acciones sin análisis. Se describe lo que se ve (ej. “salen caracteres raros en la terminal”) pero no se explica la causa. Las conclusiones son incorrectas o no están respaldadas por evidencia. | La bitácora describe los resultados, pero la reflexión es superficial. Se identifica el problema (ej. “los datos llegan mal”) pero no se articula claramente por qué una solución (como el framing) lo resuelve a nivel de bytes. | La bitácora conecta claramente la evidencia (capturas de la terminal, logs de la consola, depurador) con la explicación teórica. Se analiza por qué un protocolo sin framing es frágil y cómo la combinación de header y checksum aporta robustez. Se analizan los errores como parte del aprendizaje. | La bitácora demuestra una reflexión profunda que va más allá de la simple verificación. Se analiza el trade-off entre eficiencia de transmisión y complejidad de implementación, y se construye un modelo mental robusto del flujo de datos, desde el microcontrolador hasta la aplicación de p5.js. |  
+| 4. Apropiación y Articulación de Conceptos | La bitácora muestra una definición incorrecta o copiada de los conceptos (ej. framing, checksum, DataView). No hay evidencia de comprensión personal. | La bitácora explica los conceptos de forma básica. Se entiende que el protocolo binario “es más rápido”, pero no se puede explicar por qué en términos de representación de datos o flujo de bytes. | La bitácora demuestra una comprensión clara y correcta de cada componente del protocolo. Se explica con palabras propias la función del header, del checksum, del DataView en JavaScript y del empaquetado con struct en MicroPython. | La bitácora demuestra una maestría conceptual. Se explican los conceptos como un sistema interdependiente. Se articula con total claridad y usando analogías propias por qué la comunicación serial es un flujo de bytes asíncrono y cómo un protocolo impone orden sobre ese “caos” para garantizar una comunicación fiable y eficiente. |  
 
-Sumatoria total de la nota: 
+### Calificaciones
+
+#### 1. Profundidad de la Indagación
+
+Nota: 4.4
+
+Motivo: En la primera actividad, al inicio cuando se me pregunto cómo funciona la comunicación entre el micro:bit y el sketch de p5.js, considerado que funciones del micro:bit como el acelerómetro X y Y, junto a los estados ‘a’ y ‘b’ de los botones usan los 6 bytes, me hice la pregunta acerca de sí era posible reemplazar esas funciones para que en el quinto o sexto byte me salga un true o false de ‘shake’ o Pin (Touch). 
+
+Además, en la actividad 2, mientras redacta los ejercicios, me hice la pregunta sobre cómo era posible determinar la cantidad de bytes por medio de los bits, y luego de investigar, debido a que era un concepto que no tenía del todo fresco, destaque el como cada 8 bits equivalen a un byte (en la bitácora puse un bit, pero fue un error de ortografía), e hice la suma de 16 + 16 bits (32) equivalen a 4 bytes del acelerómetro X y Y, y que 16 bytes (de 8 + 8) daban como resultado 2 bytes, correspondientes a ‘a’ y ‘b’ con sus estados True y False.
+
+
+#### 2. Calidad de la Experimentación
+
+Nota: 3.8
+
+Motivo: En cada una de las 3 actividades realice los experimentos, en cada una adjunte los procesos que conllevaron por medio de capturas de pantalla, incluso en la actividad 3 durante un error de código que solicitaba reproducir el programa de p5 varias veces, menciona que en la consola podía observar un estado true del botón ‘a’, mencione que se debía a que al no tener el framing, provoca que los datos no están sincronizados, incluso lo relacione con una señal fantasma, debido a que está ahí, pero no debería estar. 
+
+Así mismo, en la actividad 2 no solo me limite a mirar lo que me salía en la terminal, sino que cuando se me preguntó “¿Cuántos bytes se están enviando por mensaje? ¿Cómo se relaciona esto con el formato '>2h2B'? ¿Qué significa cada uno de los bytes que se envían?” decidí agitar unas cuantas veces el micro:bit y mostrarlos en las capturas para confirmar hipótesis personales en relación a los estados del microbit y valores, más que todo referente a los estados de los botones ‘a’ y ‘b’, en donde yo mencione y citó “El quinto byte es el de 'a' y el sexto es el de 'b', 01 indica True y 00 indica False”.
+
+#### 3. Análisis y Reflexión
+
+Nota: 4.0
+
+La bitácora conecta claramente la evidencia (capturas de la terminal, logs de la consola, depurador) con la explicación teórica. Se analiza por qué un protocolo sin framing es frágil y cómo la combinación de header y checksum aporta robustez. Se analizan los errores como parte del aprendizaje.
+
+Motivo:
+
+#### 4. Apropiación y Articulación de Conceptos
+
+Nota: 4.2
+
+La bitácora demuestra una comprensión clara y correcta de cada componente del protocolo. Se explica con palabras propias la función del header, del checksum, del DataView en JavaScript y del empaquetado con struct en MicroPython.
+
+Motivo:
+
+
+Nota definitiva: 
 
 
 ## REFLECT
@@ -150,6 +186,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
