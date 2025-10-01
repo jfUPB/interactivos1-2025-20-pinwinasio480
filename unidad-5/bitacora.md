@@ -246,7 +246,7 @@ Durante la actividad 2, logre por medio de los experimentos ver los datos en tex
 
 *La bitácora demuestra una reflexión profunda que va más allá de la simple verificación.*
 
-Nota: 4.8
+Nota: 5.0
 
 Motivo: En la actividad 2 hice cuadros comparativos para ver las diferencias principales entre las ventajas y desventajas del lenguaje Binario y el ASCII para poder verificar que hubieran coincidencias o contrastes que pudiese ser evidentes para diferenciarlas, en este caso, observar que en lo que más destaca una, destaca la otra, aqui vuelvo a destacar la tabla:
 
@@ -258,7 +258,7 @@ Motivo: En la actividad 2 hice cuadros comparativos para ver las diferencias pri
 
 *La bitácora demuestra una maestría conceptual. Se explican los conceptos como un sistema interdependiente*
 
-Nota: 4.6
+Nota: 5.0
 
 Motivo: En la primera actividad, logre describir el lenguaje ASCII como formato CSV, incluo destacando el papel del framing ahi, como mencione y cito *"La estrucuta de ASCII se basa en mensajes de texto con formato CVS (es un tipo de extensión en donde los valores son separados por comas)...Aquí nos indica que el valor de X esta en 200, el de Y en 100, que el botón 'a' esta oprimido pero el de 'b' no, y el "\n" al final es para indicar el fin del mensaje (esto vendria siendo framing, en las actividades posteriores se hara uso de framing)"*.
 Y en la actividad 3, pude explicar el motivo del porque ya no teniamos que enviar los datos delimitados y con un (\n), en este caso, al ya no tener que enviar los valores como texto ASCII, ahora con el binario se envia la información en el formato de su mismo tipo, es decir, con paquetes de longitud fija que permite saber exactamente cuantos bytes se deben leer por transmisión (contando los ejemplos anteriores, son 6 bytes si tomamos en cuenta la cantidad de sensores, los dos bytes de X y Y, y un byte de 'a' y otro de 'b').
@@ -266,7 +266,7 @@ Y en la actividad 3, pude explicar el motivo del porque ya no teniamos que envia
 En la unidad 4 teniamos que enviar los datos delimitados y marcados con un salto de línea (\n) porque los valores se enviaban como texto ASCII. Esto hacía que la aplicación dependiera del protocolo para saber dónde terminaba cada paquete, es decir, el salto de línea marcaba el fin del mensaje, que luego se leía con port.readUntil("\n").
 En cambio, ahora la información se envía en formato binario, con paquetes de longitud fija, lo que permite que el receptor sepa exactamente cuántos bytes debe leer en cada transmisión. Gracias a esto, ya no es necesario incluir delimitadores ni saltos de línea.
 
-Nota definitiva: 4.85
+Nota definitiva: 5.0
 
 ## REFLECT
 
@@ -402,6 +402,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
