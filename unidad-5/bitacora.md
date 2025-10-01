@@ -201,7 +201,7 @@ En la consola veo que aparece que el botón A está en true aunque no lo presion
 
 ![Captura de pantalla 2025-09-17 545960](https://github.com/user-attachments/assets/3100f83d-698b-4693-bced-11826bf1bdee)
 
-*EXPLICACION DE CAMBIOS EN EL PROGRAMA* Y al reproducirlo, ahora ya no me sale que es true tanto el a pressed como el microbit activo, sino que solo el botón a.
+Tras hacer la modificación en el codigo de Python y P5, pude comparar como anteriormente aparecía en la consola que tanto "A pressed" como "Microbit ready to draw" estaban activos al mismo tiempo en true, aunque en realidad solo deberia estar activo el "A pressed". Después de los cambios realizados, el comportamiento se corrigió y ahora la consola muestra de forma más precisa los estados: únicamente "a pressed" aparece en true, mientras que "Microbit ready to draw" se mantiene en false. Esto ayuda debido a que la modificación permitió una lectura más clara y exacta de los valores enviados por el dispositivo y no causar mezclas como el error visto en la pregunta anterior.
 
 La versión final de los programas de micro:bit y p5.js son las siguientes:
 
@@ -209,21 +209,11 @@ La versión final de los programas de micro:bit y p5.js son las siguientes:
 
 🧐🧪✍️ ¿Qué cambios tienen los programas y ¿Qué puedes observar en la consola del editor de p5.js?
 
-*EXPLICACION DE AMBOS CODIGOS* Ya me deja controlar el programa con libertad como en la actividad 1 en lugar de que solo se oprima a.
-
 ![Captura de pantalla 2025-09-17 FINAL ACTIVIDAD 3](https://github.com/user-attachments/assets/3f5b2329-af29-4d05-b66e-8e9d0759d3ba)
 
+En el programa de micro:bit nuevo, se modificó la forma de enviar los datos: antes se usaban valores fijos para X, Y y el estado de los botones, pero en la versión final se emplean directamente los valores del acelerómetro y los estados reales de los botones A y B. Por su parte, en el código de p5.js se cambió la manera de interpretar la posición, debido a que ahora los valores de X e Y se ajustan para dibujar en torno al centro de la pantalla en lugar de hacerlo solo en una esquina o mejor dicho, en una sola parte.
 
-
-
-
-
-
-
-
-
-
-
+En la consola del editor de p5.js se puede observar que ya no solo se muestra el mensaje de “A pressed” como anteriormente con los estados en conjunto, sino que aparecera 'A pressed' y 'B pressed' + la cantidad de veces oprimidas de cada botón. Estos cambios en el código permiten un control más libre y dinámico de la interacción, parecido a la actividad 1 de esta misma unidad, pero con la ventaja de usar los sensores y botones del micro:bit en tiempo real.
 
 ## Autoevaluación:
 
@@ -406,6 +396,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
