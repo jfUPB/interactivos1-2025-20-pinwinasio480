@@ -131,7 +131,7 @@ data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
 
 Tras cambiarlo al modo Hex, en el que ahora los datos se leen en hexadecimales, lo transmitido corresponde exactamente a la linea de código señalada, esto debido a que la instrucción empaqueta los valores de las variables en bloques binarios compuestos por dos enteros de 16 bits (los de xValue y yValue) y dos enteros de 6 bits (de aState y bState), lo que en total da como resultado 6 bytes. Por lo que en otras palabras, en modo texto (ejercicio anterior) mostrara carcateres y simbolos extraños dado a que muchos de los valores en binario no son legibles, pero al estar en modo hex, se mostraran los valores reales en la misma organización del formato >2h2B.
 
-NOTA: Mi principal pregunta mientras redactaba este ejercicio, es: ¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un bit, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes.
+NOTA: Mi principal pregunta mientras redactaba este ejercicio, es: ¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un byte, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes.
 
 *No te parece que el resultado es un poco más difícil de leer que el texto en ASCII?*
 
@@ -228,7 +228,22 @@ En base a lo que desarolle durante la unidad (y de paso en el reflect para poder
 
 Nota: 5.0
 
-Motivo: En Actividad 1 no solo expliqué el código, sino que me pregunté: “¿Se pueden reemplazar los botones A y B por shake o por un pin touch?”.
+*Se formulan preguntas que exploran el diseño y sus implicaciones*
+
+Motivo: En la primera actividad, mientras redactaba la primera pregunta *Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?* no solo me limite a explicar como se hacia la comunicación entre ambas partes, sino que al final me pregunte si era posible reemplazar en el ASCII (cuando aparecen los 6 bytes) por ejemplos estados True y False de 'a' y 'b' con el de otras funciones del micro:bit como estados de shake o pin touch. Asi mismo, en la segunda actividad en la pregunta *Captura el resultado del experimento anterior. Lo que ves ¿Cómo está relacionado con esta línea de código?*  mientras redactaba mi respuesta, comente que lo siguiente y cito *"¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un byte, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes"*, o en otras palabras, me pregunte como uno determina la cantidad bytes con los bits, aunque al final tras sumar la cantidad de bits, me daba como resultado la cantidad de bytes.
+
+### 🧐🧪✍️ Captura el resultado del experimento anterior. Lo que ves ¿Cómo está relacionado con esta línea de código?
+
+```Python
+
+data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
+
+```
+
+Tras cambiarlo al modo Hex, en el que ahora los datos se leen en hexadecimales, lo transmitido corresponde exactamente a la linea de código señalada, esto debido a que la instrucción empaqueta los valores de las variables en bloques binarios compuestos por dos enteros de 16 bits (los de xValue y yValue) y dos enteros de 6 bits (de aState y bState), lo que en total da como resultado 6 bytes. Por lo que en otras palabras, en modo texto (ejercicio anterior) mostrara carcateres y simbolos extraños dado a que muchos de los valores en binario no son legibles, pero al estar en modo hex, se mostraran los valores reales en la misma organización del formato >2h2B.
+
+NOTA: Mi principal pregunta mientras redactaba este ejercicio, es: ¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un bit, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes.
+
 
 En Actividad 2 me pregunté: “¿Cómo es posible determinar la cantidad de bytes a partir de los bits?”.
 
@@ -238,11 +253,11 @@ Esto demuestra que no me limité a repetir lo dado, sino que busqué más allá.
 
 Nota: 5.0
 
-Motivo: En Actividad 2, probé a ver datos en texto ASCII y luego en HEX/binario, comparando cómo cambiaba la interpretación de los bytes.
+*Se diseñan experimentos precisos y creativos que no solo verifican, sino que aíslan y demuestran la necesidad de ciertas soluciones o las sutilezas de la comunicación.*
 
-También experimenté con enviar continuo vs bajo agitación, y en Actividad 3 comparé antes y después de aplicar framing.
+Motivo:
 
-Incluso provoqué un error en el botón A para observar cómo se producía y cómo se corregía.
+Durante la actividad 2, logre por medio de los experimentos ver los datos en texto ASCII y HEX/Binario, no solo limitandome a probarlo asecas, sino que tambien lo comparaba con como cambiaba la interpretación de los bytes en ambas modalidades, además de destacar que en uno de los experimentos, al cambiar los datos a modo texto, me salian caracteres no legibles (simbolos como cuadrados con signos de pregunta) debido a que a diferencia del HEX, en modo texto los valores en binario no son legibles. Y en la tercera actividad, antes y despues de aplicar framing, pude ver los cambios en la consola, aunque no lo mencione en la bitacora, cuando me salia el error con el estado de 'a', probe en muchas ocasiones el programa como prueba y error para ver otros errores aparte, como el que se genere de forma extraña lo que dibuja el programa.
 
 #### 3. Análisis y Reflexión
 
@@ -401,6 +416,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
