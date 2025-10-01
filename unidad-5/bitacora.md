@@ -261,17 +261,23 @@ Durante la actividad 2, logre por medio de los experimentos ver los datos en tex
 
 #### 3. Análisis y Reflexión
 
+*La bitácora demuestra una reflexión profunda que va más allá de la simple verificación.*
+
 Nota: 5.0
 
-Motivo: En Actividad 1 expliqué paso a paso cómo trim(), split() e int() transforman los datos en coordenadas.
+Motivo: En la actividad 2 hice cuadros comparativos para ver las diferencias principales entre las ventajas y desventajas del lenguaje Binario y el ASCII para poder verificar que hubieran coincidencias o contrastes que pudiese ser evidentes para diferenciarlas, en este caso, observar que en lo que más destaca una, destaca la otra, aqui vuelvo a destacar la tabla:
 
-En Actividad 3 analicé el error del botón A en true y lo conecté con el problema de framing.
-
-En Actividad 2, armé tablas con ventajas y desventajas de ASCII vs binario, mostrando diferencias claras.
+|Ventajas de ASCII|Desventajas de ASCII|Ventajas de Binario|Desventajas de Binario|
+| --- | --- | --- | --- |
+|Es más facil de entender debido a que esta en texto los datos|Ocupa más espacio de datos como "-2040"|Ocupa menos espacio, solo se transmiten los 6 bytes necesarios|No es muy legible a primera vista|
 
 #### 4. Apropiación y Articulación de Conceptos
 
+*La bitácora demuestra una maestría conceptual. Se explican los conceptos como un sistema interdependiente*
+
 Nota: 5.0
+
+..
 
 Motivo: En Actividad 1 describí ASCII como formato CSV con delimitador y salto de línea como framing.
 
@@ -416,6 +422,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
