@@ -232,23 +232,6 @@ Nota: 5.0
 
 Motivo: En la primera actividad, mientras redactaba la primera pregunta *Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?* no solo me limite a explicar como se hacia la comunicación entre ambas partes, sino que al final me pregunte si era posible reemplazar en el ASCII (cuando aparecen los 6 bytes) por ejemplos estados True y False de 'a' y 'b' con el de otras funciones del micro:bit como estados de shake o pin touch. Asi mismo, en la segunda actividad en la pregunta *Captura el resultado del experimento anterior. Lo que ves ¿Cómo está relacionado con esta línea de código?*  mientras redactaba mi respuesta, comente que lo siguiente y cito *"¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un byte, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes"*, o en otras palabras, me pregunte como uno determina la cantidad bytes con los bits, aunque al final tras sumar la cantidad de bits, me daba como resultado la cantidad de bytes.
 
-### 🧐🧪✍️ Captura el resultado del experimento anterior. Lo que ves ¿Cómo está relacionado con esta línea de código?
-
-```Python
-
-data = struct.pack('>2h2B', xValue, yValue, int(aState), int(bState))
-
-```
-
-Tras cambiarlo al modo Hex, en el que ahora los datos se leen en hexadecimales, lo transmitido corresponde exactamente a la linea de código señalada, esto debido a que la instrucción empaqueta los valores de las variables en bloques binarios compuestos por dos enteros de 16 bits (los de xValue y yValue) y dos enteros de 6 bits (de aState y bState), lo que en total da como resultado 6 bytes. Por lo que en otras palabras, en modo texto (ejercicio anterior) mostrara carcateres y simbolos extraños dado a que muchos de los valores en binario no son legibles, pero al estar en modo hex, se mostraran los valores reales en la misma organización del formato >2h2B.
-
-NOTA: Mi principal pregunta mientras redactaba este ejercicio, es: ¿Como es posible determinar la cantidad de bytes por medio de los bits? tras una investigación para recordar, en base a lo que entiendo, cada 8 bits equivalen a un bit, entonces: 16 bits + 16 bits = 4 bytes; 8 bits + 8 bits = 2 bytes, y como resultado, ahi estarian los 6 bytes correspondientes.
-
-
-En Actividad 2 me pregunté: “¿Cómo es posible determinar la cantidad de bytes a partir de los bits?”.
-
-Esto demuestra que no me limité a repetir lo dado, sino que busqué más allá.
-
 #### 2. Calidad de la Experimentación
 
 Nota: 5.0
@@ -257,13 +240,13 @@ Nota: 5.0
 
 Motivo:
 
-Durante la actividad 2, logre por medio de los experimentos ver los datos en texto ASCII y HEX/Binario, no solo limitandome a probarlo asecas, sino que tambien lo comparaba con como cambiaba la interpretación de los bytes en ambas modalidades, además de destacar que en uno de los experimentos, al cambiar los datos a modo texto, me salian caracteres no legibles (simbolos como cuadrados con signos de pregunta) debido a que a diferencia del HEX, en modo texto los valores en binario no son legibles. Y en la tercera actividad, antes y despues de aplicar framing, pude ver los cambios en la consola, aunque no lo mencione en la bitacora, cuando me salia el error con el estado de 'a', probe en muchas ocasiones el programa como prueba y error para ver otros errores aparte, como el que se genere de forma extraña lo que dibuja el programa.
+Durante la actividad 2, logre por medio de los experimentos ver los datos en texto ASCII y HEX/Binario, no solo limitandome a probarlo asecas, sino que tambien lo comparaba con como cambiaba la interpretación de los bytes en ambas modalidades, además de destacar que en uno de los experimentos, al cambiar los datos a modo texto, me salian caracteres no legibles (simbolos como cuadrados con signos de pregunta) debido a que a diferencia del HEX, en modo texto los valores en binario no son legibles. Y en la actividad 3, antes y despues de aplicar framing, pude ver los cambios en la consola, aunque no lo mencione en la bitacora, cuando me salia el error con el estado de 'a', probe en muchas ocasiones el programa como prueba y error para ver otros errores aparte, como el que se genere de forma extraña lo que dibuja el programa.
 
 #### 3. Análisis y Reflexión
 
 *La bitácora demuestra una reflexión profunda que va más allá de la simple verificación.*
 
-Nota: 5.0
+Nota: 4.8
 
 Motivo: En la actividad 2 hice cuadros comparativos para ver las diferencias principales entre las ventajas y desventajas del lenguaje Binario y el ASCII para poder verificar que hubieran coincidencias o contrastes que pudiese ser evidentes para diferenciarlas, en este caso, observar que en lo que más destaca una, destaca la otra, aqui vuelvo a destacar la tabla:
 
@@ -275,18 +258,15 @@ Motivo: En la actividad 2 hice cuadros comparativos para ver las diferencias pri
 
 *La bitácora demuestra una maestría conceptual. Se explican los conceptos como un sistema interdependiente*
 
-Nota: 5.0
+Nota: 4.6
 
-..
+Motivo: En la primera actividad, logre describir el lenguaje ASCII como formato CSV, incluo destacando el papel del framing ahi, como mencione y cito *"La estrucuta de ASCII se basa en mensajes de texto con formato CVS (es un tipo de extensión en donde los valores son separados por comas)...Aquí nos indica que el valor de X esta en 200, el de Y en 100, que el botón 'a' esta oprimido pero el de 'b' no, y el "\n" al final es para indicar el fin del mensaje (esto vendria siendo framing, en las actividades posteriores se hara uso de framing)"*.
+Y en la actividad 3, pude explicar el motivo del porque ya no teniamos que enviar los datos delimitados y con un (\n), en este caso, al ya no tener que enviar los valores como texto ASCII, ahora con el binario se envia la información en el formato de su mismo tipo, es decir, con paquetes de longitud fija que permite saber exactamente cuantos bytes se deben leer por transmisión (contando los ejemplos anteriores, son 6 bytes si tomamos en cuenta la cantidad de sensores, los dos bytes de X y Y, y un byte de 'a' y otro de 'b').
 
-Motivo: En Actividad 1 describí ASCII como formato CSV con delimitador y salto de línea como framing.
+En la unidad 4 teniamos que enviar los datos delimitados y marcados con un salto de línea (\n) porque los valores se enviaban como texto ASCII. Esto hacía que la aplicación dependiera del protocolo para saber dónde terminaba cada paquete, es decir, el salto de línea marcaba el fin del mensaje, que luego se leía con port.readUntil("\n").
+En cambio, ahora la información se envía en formato binario, con paquetes de longitud fija, lo que permite que el receptor sepa exactamente cuántos bytes debe leer en cada transmisión. Gracias a esto, ya no es necesario incluir delimitadores ni saltos de línea.
 
-En Actividad 2 desglosé struct.pack('>2h2B') y expliqué qué representa cada símbolo y byte.
-
-En Actividad 3 mostré cómo pasamos de texto variable con delimitadores a paquetes binarios fijos, lo que elimina la necesidad de \n.
-
-Nota definitiva: 5.0
-
+Nota definitiva: 4.85
 
 ## REFLECT
 
@@ -422,6 +402,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
