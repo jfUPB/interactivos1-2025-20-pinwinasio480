@@ -178,18 +178,6 @@ En cuanto a ventajas y desventajas:
 
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 142759" src="https://github.com/user-attachments/assets/76b6ed9a-e211-4a06-9562-f5e08a15eaac" />
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### Actividad 3
 
 🧐🧪✍️ Explica por qué en la unidad anterior teníamos que enviar la información delimitada y además marcada con un salto de línea y ahora no es necesario.
@@ -418,6 +406,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
