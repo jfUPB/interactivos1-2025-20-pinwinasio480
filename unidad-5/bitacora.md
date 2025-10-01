@@ -2,9 +2,9 @@
 
 ## Bitacora Unidad 5 (Actividades 1, 2 y 3, para la autoevaluación)
 
-## Actividad 1
+### Actividad 1
 
-### Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?
+Describe cómo se están comunicando el micro:bit y el sketch de p5.js. ¿Qué datos envía el micro:bit?
 
 La comunicación entre ambas partes se basa principalmente en como el micro:bit envia los datos al computador por medio del UART Serial (por lo que he estado investigando, es el hardware utilizado en los micro:bits), siendo Python el sensor y P5 la interfaz y pantalla por parte del usuario.
 
@@ -169,7 +169,7 @@ Cuando agito el micro:bit, la forma en la que los datos son mostrados en la term
 
 En cuanto a ventajas y desventajas:
 
-|Ventajas de ASCII|Desventajas de ASCII|Ventajas de Binario|Desventajas de Binario1
+|Ventajas de ASCII|Desventajas de ASCII|Ventajas de Binario|Desventajas de Binario|
 | --- | --- | --- | --- |
 |Es más facil de entender debido a que esta en texto los datos|Ocupa más espacio de datos como "-2040"|Ocupa menos espacio, solo se transmiten los 6 bytes necesarios|No es muy legible a primera vista|
 
@@ -362,6 +362,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
