@@ -178,7 +178,63 @@ En cuanto a ventajas y desventajas:
 
 <img width="1919" height="1079" alt="Captura de pantalla 2025-09-12 142759" src="https://github.com/user-attachments/assets/76b6ed9a-e211-4a06-9562-f5e08a15eaac" />
 
+
+
+
+
+
+
+
+
+
+
+
+
 ### Actividad 3
+
+🧐🧪✍️ Explica por qué en la unidad anterior teníamos que enviar la información delimitada y además marcada con un salto de línea y ahora no es necesario.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b4731043-9dfa-4b0a-a8a8-02cd8948e4e0" />
+
+En la unidad 4 teniamos que enviar los datos delimitados y marcados con un salto de línea (\n) porque los valores se enviaban como texto ASCII. Esto hacía que la aplicación dependiera del protocolo para saber dónde terminaba cada paquete, es decir, el salto de línea marcaba el fin del mensaje, que luego se leía con port.readUntil("\n").
+En cambio, ahora la información se envía en formato binario, con paquetes de longitud fija, lo que permite que el receptor sepa exactamente cuántos bytes debe leer en cada transmisión. Gracias a esto, ya no es necesario incluir delimitadores ni saltos de línea.
+
+🧐🧪✍️ Compara el código de la unidad anterior relacionado con la recepción de los datos seriales que ves ahora. ¿Qué cambios observas?
+
+En comparación con la unidad 4, ya no se utiliza connectionInitialized ni el port.clear(). Asi mismo, en lugar de leer los datos como texto delimitado por comas y terminado en \n usando port.readUntil("\n"), se leen directamente 6 bytes fijos con port.readBytes(6). Estos bytes se interpretan con un DataView, asignando 2 bytes a microBitX, 2 a microBitY y 1 a cada estado de los botones A y B. En consecuencia, ya no es necesario usar split(",") ni trim(), porque los paquetes llegan en binario con longitud fija.
+
+🧐🧪✍️ ¿Qué ves en la consola? ¿Por qué crees que se produce este error?
+
+![CAPTURAACTIVIDAD3](https://github.com/user-attachments/assets/b7fb22f0-8e29-4cf2-99ac-4a780772d370)
+
+En la consola veo que aparece que el botón A está en true aunque no lo presioné. Tras preguntarle a la inteligencia artificial y en base a lo que recuerdo de la explicación del profesor, esto pasa porque los datos no están enmarcados (sin framing), lo que provoca que no haya sincronización entre el envío y la lectura. Como consecuencia, los bytes se interpretan de manera incorrecta y generan un valor falso (en este caso, en el botón 'a'). Para solucionar esto, se debe usar un protocolo de comunicación que incluya un byte de inicio y fin de paquete, de modo que los datos lleguen alineados y sin errores, lo que en pocas palabras, es la definición de framing.
+
+🧐🧪✍️ Analiza el código, observa los cambios. Ejecuta y luego observa la consola. ¿Qué ves?
+
+![Captura de pantalla 2025-09-17 545960](https://github.com/user-attachments/assets/3100f83d-698b-4693-bced-11826bf1bdee)
+
+*EXPLICACION DE CAMBIOS EN EL PROGRAMA* Y al reproducirlo, ahora ya no me sale que es true tanto el a pressed como el microbit activo, sino que solo el botón a.
+
+La versión final de los programas de micro:bit y p5.js son las siguientes:
+
+*CODIGO DE PYTHON + P5 NUEVO*
+
+🧐🧪✍️ ¿Qué cambios tienen los programas y ¿Qué puedes observar en la consola del editor de p5.js?
+
+*EXPLICACION DE AMBOS CODIGOS* Ya me deja controlar el programa con libertad como en la actividad 1 en lugar de que solo se oprima a.
+
+![Captura de pantalla 2025-09-17 FINAL ACTIVIDAD 3](https://github.com/user-attachments/assets/3f5b2329-af29-4d05-b66e-8e9d0759d3ba)
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Autoevaluación:
@@ -362,6 +418,7 @@ R/ No recuerdo bien su significado, a juzgar por el nombre, intuyo que tiene que
 
 ```
 R/ Para que los datos del acelerometro se pasen a coordenadas y que los estados de los botones 'a' y 'b' funcionen.
+
 
 
 
