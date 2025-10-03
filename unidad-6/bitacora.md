@@ -82,9 +82,9 @@ Y en la temrinal aun puedo observar como el servidor esta recibiendo de forma op
 
 R/ Yendo por partes, siempre que puedo uso Wi-Fi en mi casa y en la universidad, por una parte, en mi casa contamos con un modem (en mi habitación) y un router en la sala; en la universidad desconozco de donde proviene la señal de internet, pero se me hace increible el como esa red llega por gran parte del campus. Los cables de red por mi parte no los utilizo, o por lo menos no en consolas como Xbox, solo utilizo uno en mi laptop cuando tengo problemas con la conexión en mi laptop, no obstante, mi hermano por ejemplo debe usar un cable de red para mejorar la conexión en su PS4 debido a la distancia de su cuarto con el modem. Y si nos vamos por el termino general, si cortamos esa rampa de acceso, en la generación actual nos estariamos perdiendo de grandes novedades o avances tecnologicos, y por la parte subjetiva, en mi caso los videojuegos, yo al ser dueño de una Xbox Series X, si, puedo seguir jugando algunos juegos en formato fisico o que haya comprado digitalmente de un solo jugador, pero los juegos multijugador online como Fortnite serian inacesibles para mi.
 
-### ¿Puedes identificar otros ejemplos de relaciones Cliente-Servidor en tu vida diaria (no necesariamente digitales)? Por ejemplo, al pedir comida en un restaurante. ¿Quién es el cliente y quién el servidor? ¿Qué se pide y qué se entrega?
+### B. ¿Puedes identificar otros ejemplos de relaciones Cliente-Servidor en tu vida diaria (no necesariamente digitales)? Por ejemplo, al pedir comida en un restaurante. ¿Quién es el cliente y quién el servidor? ¿Qué se pide y qué se entrega?
 
-R/ B. Un ejemplo que se me ocurre es cuando voy a un banco, en este caso, yo, como cliente, solicito al cajero retirar dinero de mi cuenta de debito, y el cajero siendo el servidor, responde a mi pedido retirando la cantidad que yo solicite. Con respecto al ejemplo del restaurante, el cliente soy al pedirle al mesero la orden que deseo, y el servidor es el restaurante, esto debido a que varios trabajadores los que actuan como el servidor, debido a que el mesero responde recibiedo nuestra orden y los chefs/cocineros responden preparando el plato, bebidas y etc , y finalmente ellos me dan lo que pedi.
+R/ Un ejemplo que se me ocurre es cuando voy a un banco, en este caso, yo, como cliente, solicito al cajero retirar dinero de mi cuenta de debito, y el cajero siendo el servidor, responde a mi pedido retirando la cantidad que yo solicite. Con respecto al ejemplo del restaurante, el cliente soy al pedirle al mesero la orden que deseo, y el servidor es el restaurante, esto debido a que varios trabajadores los que actuan como el servidor, debido a que el mesero responde recibiedo nuestra orden y los chefs/cocineros responden preparando el plato, bebidas y etc , y finalmente ellos me dan lo que pedi.
  
 ### C. Toma la URL de tu sitio web favorito. Intenta identificar el protocolo, el nombre de dominio y la ruta (si la hay). ¿Qué crees que pasa si solo escribes el nombre de dominio (ej. www.google.com) sin una ruta específica? ¿Qué “página por defecto” crees que te envía el servidor?
 
@@ -102,49 +102,49 @@ Tras escribir solo el nombre del dominio, puedo confirmar que me envio a la pág
 
 ### D. Compara HTTP con los protocolos seriales que usaste.
 
-#### ¿Qué similitudes encuentras?
+### D.1 ¿Qué similitudes encuentras?
 
-R/
+R/ Tanto HTTP como los protocolos seriales tienen un emisor y un receptor, en la unidad anterior el emisor era el micro:bit y el receptor el programa de p5.js, y aqui el emisor es el cliente y el receptor el servidor; en ambas se necesitan formatos acordados, anteriormente era ASCII o binario, ahora son textos estructurados (lineas con método, cabeceras y cuerpo).
 
-#### ¿Qué diferencias clave ves?
+### D.2 ¿Qué diferencias clave ves?
 
-R/
+R/ Por parte de los protocolos serias, son dos dispositivos directos y se mandan datos simples, mientras que con HTTP es con redes globales y se envian cabeceras, métodos, estados, etc. Tambien esta como se transportan los datos, con un serial es con un puerto de cables, pero con HTTP es con Protocolos de Control de Transmisión y de internet (TCP/IP).
 
-#### ¿Por qué crees que HTTP necesita ser más complejo que un simple envío de bytes como hacías con el micro:bit?
+### D.3 ¿Por qué crees que HTTP necesita ser más complejo que un simple envío de bytes como hacías con el micro:bit?
 
-R/
+R/ Porque no es solo enviar bytes, sino que es más información y recursos (como el tipo de archivo y página) y más clientes y servidores en simultaneo en lugar de uno o muy pocos a los que debe responder.
 
 ### E. Piensa en una página web simple, como un formulario de login.
 
-#### ¿Qué parte crees que es HTML (ej. los campos de texto, el botón)?
+### E.1 ¿Qué parte crees que es HTML (ej. los campos de texto, el botón)?
 
 R/ Los campos de texto donde me pide escribir el nombre de usuario y la contraseña.
 
-#### ¿Qué parte es CSS (ej. el color del botón, el tipo de letra)?
+### E.2 ¿Qué parte es CSS (ej. el color del botón, el tipo de letra)?
 
 R/ Ambos ejemplos son parte del CSS, pues se trata de la identidad visual de la página, en este caso, el color del botón o botones para iniciar sesión y la fuente de letra de la misma.
 
-#### ¿Qué parte es JavaScript (ej. la comprobación de si escribiste algo antes de enviar, el mensaje de “contraseña incorrecta” que aparece sin recargar la página)?
+### E.4 ¿Qué parte es JavaScript (ej. la comprobación de si escribiste algo antes de enviar, el mensaje de “contraseña incorrecta” que aparece sin recargar la página)?
 
 R/ La reacción al click de iniciar sesión, saltar la advertencia de error ya sea como en el ejemplo, por una contraseña incorrecta, un nombre de usuario incorrecto o un campo vacio.
 
 #### F. Compara el bucle draw() de p5.js con este modelo de “esperar a que algo pase y reaccionar”.
 
-### ¿Qué ventajas crees que tiene el modelo basado en eventos para una interfaz de usuario web?
+### F.1 ¿Qué ventajas crees que tiene el modelo basado en eventos para una interfaz de usuario web?
 
-R/
+R/ Entre las ventajas se encuentra: solo debe ejecutar el código cuando sea necesario (es decir, cuando ocurra el evento) en lugar ejecutarse en un bucle cada 60 segundos, tambien facilitia el manejos de varias interraciones sin que se pregunte si algo cambió todo el tiempo, y en lugar de redibujar toda la pantalla, solamente responde con rapides a las acciones del cliente/usuario.
 
-### ¿Sería eficiente tener un bucle draw() redibujando toda la página 60 veces por segundo si nada ha cambiado?
+### F.2 ¿Sería eficiente tener un bucle draw() redibujando toda la página 60 veces por segundo si nada ha cambiado?
 
-R/
+R/ No, porque si no se han aplicado cambios, se estaria gastando recursos, además de que redibujar la misma pantalla seria el equivalente a pintar de blanco un lienzo una y otra vez, se actualiza, pero no hay nada.
 
 ### G. ¿Por qué crees que podría ser útil usar JavaScript tanto en el cliente (navegador) como en el servidor? ¿Se te ocurre alguna ventaja para los desarrolladores?
 
-R/
+R/ Podria ser bastante útil ya que reduciria la cantidad de linea de aprendizaje para desarollar códigos, en este caso, seria una gran ventaja que al tener el cliente y el servidor los mismos lenguajes de programación tambien haria que se puedan compartir cosas como funciones, validaciones o estructuras.
 
 ### H. Resume con tus propias palabras la diferencia fundamental entre una comunicación HTTP tradicional y una comunicación usando WebSockets/Socket.IO. ¿En qué tipo de aplicaciones has visto o podrías imaginar que se usa esta comunicación en tiempo real?
 
-R/
+R/ Por parte del HTTP tradicional usuario A pide una petición a HTTP, usuario A espera a que esa petición se envie a usuario B y finalmente usuario A recibe una respuesta de usuario B (como el ejemplo del profesor con los correos electronicos); Mientras que con WebSockets/Socket.IO. tanto usuario A como usuario B pueden interactuar de forma simultanea sin tener que pedirle algo a HTTP; ese tipo de interacciónes las veo constantemente en los juegos multijugador en linea como Roblox, donde usuario A y B interactuan al mismo tiempo, aunque tambien esta presente en aplicaciones en los que hay llamadas como WhatsApp o Discord, hasta funciones de google Docs para que más de un usuario modifique un archivo en simultaneo cuenta.
 
 ## Actividad 3 
 
@@ -197,4 +197,5 @@ R/
 #### Intenta abrir http://localhost:3001/page1. ¿Funciona?
 
 #### ¿Qué aprendiste sobre la variable port y la función listen? Restaura el puerto a 3000.
+
 
