@@ -154,13 +154,29 @@ R/ Por parte del HTTP tradicional usuario A pide una petición a HTTP, usuario A
 
 #### Cambia la primera ruta de /page1 a /pagina_uno.
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7da92ff4-016c-48f2-b240-b80b9c12e3c9" />
+
 #### Inicia el servidor.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/022f1eb4-420a-4953-a981-112b1817d2f5" />
 
 #### Intenta acceder a http://localhost:3000/page1. ¿Funciona?
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/11c71f4f-98b8-4da8-bc80-9e52c6f63a39" />
+
+Dice que no se puede obtener page1.
+
 #### Ahora intenta acceder a http://localhost:3000/pagina_uno. ¿Funciona?
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8e491742-656d-44a0-a1be-dc4aab71c8de" />
+
+Ahora si me aparece sincronizando datos.
+
 #### ¿Qué te dice esto sobre cómo el servidor asocia URLs con respuestas? Restaura el código.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/dddfd9ef-9be6-4c9f-8385-717e37f08335" />
+
+R/ Me dice que el servidor debe tener una coincidencia exacta con la URL para poder funcionar, de lo contrario, esta no servira debido a que no sabra que respuesta dar, que eso es otro detalle, por lo que interpreto, cada URL esta asociada con una respuesta especifica, es como un mapa, tiene que ir hasta una parte especifica o no habra nada.
 
 ### 🧐🧪✍️ Experimenta (PARTE 2)
 
@@ -168,11 +184,51 @@ R/ Por parte del HTTP tradicional usuario A pide una petición a HTTP, usuario A
 
 #### Abre http://localhost:3000/page1 en una pestaña. Observa la terminal del servidor. ¿Qué mensaje ves? Anota el ID.
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f748d593-6803-4cec-be8a-0263835f7b01" />
+
+```
+A user connected - ID: uai0Psj73MREhqeKAAAB
+Received win1update from ID: uai0Psj73MREhqeKAAAB Data: { x: 0, y: 0, width: 1528, height: 738 }
+Debug - Connected clients: 1, Page1: 1, Page2: 0, Synced: 0
+Sync status: pages=false, synced=false, clients=1
+Debug - Connected clients: 1, Page1: 1, Page2: 0, Synced: 1
+Sync status: pages=false, synced=true, clients=1
+```
+El ID que me aparece por parte de page1 es: uai0Psj73MREhqeKAAAB
+
 #### Abre http://localhost:3000/page2 en OTRA pestaña. Observa la terminal. ¿Qué mensaje ves? ¿El ID es diferente?
+
+<img width="918" height="255" alt="image" src="https://github.com/user-attachments/assets/997eb9b0-d255-461c-90b9-3a6767076f69" />
+
+```
+A user connected - ID: XJsc-9cA7vdYVW0RAAAD
+Received win2update from ID: XJsc-9cA7vdYVW0RAAAD Data: { x: 0, y: 0, width: 1528, height: 738 }
+Debug - Connected clients: 2, Page1: 1, Page2: 1, Synced: 1
+Sync status: pages=true, synced=false, clients=2
+Debug - Connected clients: 2, Page1: 1, Page2: 1, Synced: 1
+Sync status: pages=true, synced=false, clients=2
+Debug - Connected clients: 2, Page1: 1, Page2: 1, Synced: 2
+All clients are fully synced
+```
+El ID de page2 no es el mismo que el de page1, en page2 el ID es: XJsc-9cA7vdYVW0RAAAD
 
 #### Cierra la pestaña de page1. Observa la terminal. ¿Qué mensaje ves? ¿Coincide el ID con el que anotaste?
 
+<img width="411" height="24" alt="image" src="https://github.com/user-attachments/assets/80cd87b9-4627-4b43-a011-e6075c08e3ae" />
+
+```
+User disconnected - ID: uai0Psj73MREhqeKAAAB
+```
+Si, coincide con el ID que aparecio al abrir la pestaña page1.
+
 #### Cierra la pestaña de page2. Observa la terminal.
+
+<img width="413" height="27" alt="image" src="https://github.com/user-attachments/assets/c93ecfae-ff8f-487f-8f9c-09fac8d77d57" />
+
+```
+User disconnected - ID: XJsc-9cA7vdYVW0RAAAD
+```
+Al igual que page1, en page2 tambien coinciden los IDs.
 
 ### 🧐🧪✍️ Experimenta (PARTE 3)
 
@@ -197,5 +253,6 @@ R/ Por parte del HTTP tradicional usuario A pide una petición a HTTP, usuario A
 #### Intenta abrir http://localhost:3001/page1. ¿Funciona?
 
 #### ¿Qué aprendiste sobre la variable port y la función listen? Restaura el puerto a 3000.
+
 
 
