@@ -236,9 +236,32 @@ Al igual que page1, en page2 tambien coinciden los IDs.
 
 #### Mueve la ventana de page1. Observa la terminal del servidor. ¿Qué evento se registra (win1update o win2update)? ¿Qué datos (Data:) ves?
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/45be3899-a57d-41dd-8be4-6550d52f6f3e" />
+
+Al mover la ventana de page1, se registra win1update, y los datos de data que veo son la posición en X y Y, asi como el ancho y alto (width y height).
+Por ejemplo:
+
+```
+Data: { x: 160, y: 76, width: 762, height: 444 }
+```
+
 #### Mueve la ventana de page2. Observa la terminal. ¿Qué evento se registra ahora? ¿Qué datos ves?
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/24889f0e-8b89-41dc-b48b-7196f137d551" />
+
+```
+Data: { x: 372, y: 89, width: 762, height: 444 }
+```
+
+Se registra el evento de win2update, y los datos aunque son valores diferentes, son los mismos de page1, es decir, X, Y, width y height.
+
 #### Experimento clave: cambia socket.broadcast.emit(‘getdata’, page1); por socket.emit(‘getdata’, page1); (quitando broadcast). Reinicia el servidor, abre ambas páginas. Mueve page1. ¿Se actualiza la visualización en page2? ¿Por qué sí o por qué no? (Pista: ¿A quién le envía el mensaje socket.emit?). Restaura el código a broadcast.emit.
+
+<img width="962" height="228" alt="image" src="https://github.com/user-attachments/assets/c2ef12b2-72f6-4181-b437-378cd2cd8764" />
+
+<img width="1919" height="1043" alt="image" src="https://github.com/user-attachments/assets/db86c592-20ac-444b-9fd1-7f403865cfcf" />
+
+No se actualiza page2, esto porque socket.emit solo manda al cliente que este envio el mensaje (page1) mientras que al tener broadcast.emit el mensaje tambien sera enviado a los otros clientes (page2).
 
 ### 🧐🧪✍️ Experimenta (PARTE 4)
 
@@ -246,13 +269,30 @@ Al igual que page1, en page2 tambien coinciden los IDs.
 
 #### Cambia const port = 3000; a const port = 3001;.
 
+<img width="1887" height="1061" alt="image" src="https://github.com/user-attachments/assets/2f93b7e8-a426-413c-b174-814fde8cba89" />
+
 #### Inicia el servidor. ¿Qué mensaje ves en la consola? ¿En qué puerto dice que está escuchando?
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/92135bcc-ef67-4e65-84cc-77511d864432" />
+
+Esta escuchando en el puerto 3001.
 
 #### Intenta abrir http://localhost:3000/page1. ¿Funciona?
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5a9cbb40-5dc7-4731-96b4-406ed990ccba" />
+
+No sirve page1.
+
 #### Intenta abrir http://localhost:3001/page1. ¿Funciona?
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/18dd68d3-410d-4eaf-957a-68b778daf947" />
+
+Y page2 tampoco.
+
 #### ¿Qué aprendiste sobre la variable port y la función listen? Restaura el puerto a 3000.
+
+R/ Que port se encarga de decirle el programa que puerto es el que debe enviar las respuestas, en este caso 3001, aqui volvemos al tema de coincidencias, si el puerto del código no coincide con el de las pestañas, el programa no va a saber que responder más alla de darte un error.
+
 
 
 
