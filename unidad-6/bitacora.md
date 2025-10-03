@@ -413,7 +413,18 @@ En la otra punta (opuesta al ellipse rojo, se crea un ellipse celeste que va aum
 
 ## Actividad 5
 
+### Explica tu idea y realiza algunos bocetos.
+
+Mi idea para mi propia aplicación, consiste en que en cada una de las ventanas, aparezca un botón que se puede oprimir, por ejemplo, un botón azul en la primera pestaña, y en la segunda un botón rojo, entonces, si oprimes el botón azul, apareceran circulos azules en la segunda ventana al rededor del botón rojo, mientras que si oprimo el botón rojo, en la primera ventana saldran ciculos rojos alrededor del botón azul. y con un botón blanco abajo de cada botón azul o rojo, se limpiara los circulos creados con los botones en ambas pestañas.
+
+### Implementa tu idea.
+
+
+
+### Incluye todos los códigos (servidor y clientes) en tu bitácora.
+
 ## Autoevaluación
 
 Siguiendo los parametros de esta unidad, en donde la cantidad de actividades define la calificación, en caso de que no actualice mi bitacora con algo del apply, considero que mi nota es de 3.0, esto debido a que cumpli con las primeras 4 actividades, incluso en los experimentos deje adjunto capturas de pantalla como sustentación de que si lleve a cabo los experimentos, asi mismo, las preguntas abiertas tambien las logre contestar, y tambien esta el tema de que el apply cuesta dos unidades, entonces, para el momento en el que se cierre la unidad antes de tiempo o diez minutos antes y no tenga nada del apply, considero que es lo más justo y logico.
+
 
