@@ -368,6 +368,52 @@ R/ Con esto puedo concluir que la función checkWindowPosition() solo se activa 
 
 ### 🧐🧪✍️ Experimenta (PARTE 5)
 
+#### Cambia el background(220) para que dependa de la distancia entre las ventanas. Puedes calcular la magnitud del resultingVector usando let distancia = resultingVector.mag(); y luego usa map() para convertir esa distancia a un valor de gris o color. background(map(distancia, 0, 1000, 255, 0)); (ajusta el rango 0-1000 según sea necesario).
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/a4dd229f-cbb6-4c65-867f-95d079477014" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d9f4ce47-cd15-4284-b9a2-7a36386ff557" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7b61aa85-dbd3-4356-a7fb-3ccea9498669" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f49d150e-8c41-476a-8cf1-c285d1733c83" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2bcab36c-2bfd-4be7-b972-0057eba85d78" />
+
+#### Inventa otra modificación creativa.
+
+En la otra punta (opuesta al ellipse rojo, se crea un ellipse celeste que va aumentando o disminuyendo su tamaño dependiendo de la distancia de las ventanas.
+
+```
+     // Esfera con tamaño dinámico
+    let tamano = map(distancia, 0, 1000, 120, 20); 
+    fill(0, 200, 255);  // color fijo azul celeste
+    noStroke();
+    ellipse(point1[0], point1[1], tamano, tamano);
+```
+
+```
+     // Esfera con tamaño dinámico
+    let tamano = map(distancia, 0, 1000, 120, 20); 
+    fill(0, 200, 255);  // color fijo azul celeste
+    noStroke();
+    ellipse(point2[0], point2[1], tamano, tamano);
+```
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ae566312-3349-439a-85ae-87c0929976da" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9ea3dce7-ccb4-4943-9b81-11e11cdf9a94" />
+
+
+<img width="1912" height="1079" alt="image" src="https://github.com/user-attachments/assets/e391f244-9cd9-4da6-b9b8-5ec1daa79d79" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/bbbe8fd0-f62a-4755-906a-308533f4d7d9" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/31f76c34-48b6-412b-a7fb-5e068c949037" />
+
+## Actividad 5
+
 ## Autoevaluación
 
 Siguiendo los parametros de esta unidad, en donde la cantidad de actividades define la calificación, en caso de que no actualice mi bitacora con algo del apply, considero que mi nota es de 3.0, esto debido a que cumpli con las primeras 4 actividades, incluso en los experimentos deje adjunto capturas de pantalla como sustentación de que si lleve a cabo los experimentos, asi mismo, las preguntas abiertas tambien las logre contestar, y tambien esta el tema de que el apply cuesta dos unidades, entonces, para el momento en el que se cierre la unidad antes de tiempo o diez minutos antes y no tenga nada del apply, considero que es lo más justo y logico.
+
