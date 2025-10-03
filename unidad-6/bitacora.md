@@ -285,14 +285,89 @@ No sirve page1.
 
 #### Intenta abrir http://localhost:3001/page1. ¿Funciona?
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/18dd68d3-410d-4eaf-957a-68b778daf947" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/836dc977-3b4c-49ac-a73a-b39002b109b5" />
 
-Y page2 tampoco.
+Ahora con 3001 si.
 
 #### ¿Qué aprendiste sobre la variable port y la función listen? Restaura el puerto a 3000.
 
 R/ Que port se encarga de decirle el programa que puerto es el que debe enviar las respuestas, en este caso 3001, aqui volvemos al tema de coincidencias, si el puerto del código no coincide con el de las pestañas, el programa no va a saber que responder más alla de darte un error.
 
+## Actividad 4
 
+### 🧐🧪✍️ Experimenta (PARTE 1)
 
+#### Abre page2.html en tu navegador (con el servidor corriendo).
 
+#### Abre la consola de desarrollador (F12).
+
+<img width="971" height="663" alt="image" src="https://github.com/user-attachments/assets/8b5d530d-01f4-4feb-bf49-8ae44a603a6f" />
+
+#### Detén el servidor Node.js (Ctrl+C).
+
+#### Refresca la página page2.html. Observa la consola del navegador. ¿Ves algún error relacionado con la conexión? ¿Qué indica?
+
+<img width="965" height="656" alt="image" src="https://github.com/user-attachments/assets/eb56e9fc-9171-4392-91b3-3def985f9616" />
+
+```
+http://localhost:3000/socket.io/?EIO=4&transport=polling&t=Pce93Lg net::ERR_CONNECTION_REFUSED
+```
+El error me indica que la conexión ha sido denegada debido a que el servidor fue detenido.
+
+#### Vuelve a iniciar el servidor y refresca la página. ¿Desaparecen los errores?
+
+<img width="965" height="648" alt="image" src="https://github.com/user-attachments/assets/5abb7644-182c-40b8-a913-fce1e6e3816f" />
+
+Los errores me dejan de salir de forma repetitiva para ahora notificarme que se ha conectado.
+
+### 🧐🧪✍️ Experimenta (PARTE 2)
+
+#### Comenta la línea socket.emit(‘win2update’, currentPageData, socket.id); dentro del listener connect.
+
+<img width="862" height="251" alt="image" src="https://github.com/user-attachments/assets/e0aba5ea-9895-4b7c-9879-b24732c3e1c7" />
+
+#### Reinicia el servidor y refresca page1.html y page2.html.
+
+#### Mueve la ventana de page2 un poco para que envíe una actualización.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e268d926-e90c-4ef7-afa9-2a5ef6e61689" />
+
+#### ¿Qué pasó? ¿Por qué?
+
+R/ No se conecta ninguna de las dos pestañas, por parte de page1, dice "sincronizando datos", pero en page2, dice "Esperando conexión de la otra ventana", esto sucede porque socket.emit es lo que permite que a las page anunciar al servidor sus datos, pero al comentar esa parte del código, page1 seguira esperando a page2, mientras que page2 aunque tambien este conectado, no notificara al resto del servidor
+
+### 🧐🧪✍️ Experimenta (PARTE 3)
+
+#### Abre ambas páginas (es posible que ya las tengas abiertas).
+
+#### Mueve la ventana de page1. Observa la consola del navegador de page2. ¿Qué datos muestra?
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3406f4ac-5d29-41ad-9aa6-872e8a3dc123" />
+
+Me muestra los valores de X, Y, width y Height. En la consola del navegador de page2, los valores X y Y se actualizan cuando muevo la pestaña de page1 (cosa que en el propio page2 no se actualiza), algo que no comente antes pero actualmente lo tengo de hipotesis, es que los valores de width y height son los del circulo page2, en la siguiente pregunta voy a comprobar si es cierto.
+
+#### Mueve la ventana de page2. Observa la consola de page1. ¿Qué pasa? ¿Por qué?
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/c6feb155-c031-4b22-a171-c710f50d3f4e" />
+
+Pasa lo mismo que en el caso anterior pero con los papeles invertidos, mientras que si muevo page2, se actualiza X y Y en la consola de page1, en la de page2 esto no sucede porque page2 o page 1 (en el caso anterior) envía sus datos al servidor, y este los reenvía a page1 (page2 en el caso anterior). En la consola de page2 (page1 anteriormente) no se ve reflejado el cambio porque la actualización de los datos está pensada para compartirse con la otra ventana, no consigo misma. Y con esta parte del experimento queda desmentida mi hipotesis, width y height son el tamaño de la ventana, no el movimiento de page2.
+
+### 🧐🧪✍️ Experimenta (PARTE 4)
+
+#### Observa checkWindowPosition() en page2.js y modifica el código del if para comprobar si el código dentreo de este se ejecuta.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/470c6206-6764-4ca4-8a68-45e2ed2e1e63" />
+
+#### Mueve cada ventana y observa las consolas.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/69fe1bdd-dbea-4b70-9899-d599e6c7fd3f" />
+
+#### ¿Qué puedes concluir y por qué?
+
+R/ Con esto puedo concluir que la función checkWindowPosition() solo se activa cuando cambian los valores de la ventana actual (en este caso, page2), lo que significa que cada cliente es responsable de detectar sus propios cambios, tanto de posición como de tamaño, además de enviarlos al servidor. Esto lo menciono porque la sincronización con la otra página ocurre solamente porque el servidor reenvia esos datos.
+
+### 🧐🧪✍️ Experimenta (PARTE 5)
+
+## Autoevaluación
+
+Siguiendo los parametros de esta unidad, en donde la cantidad de actividades define la calificación, en caso de que no actualice mi bitacora con algo del apply, considero que mi nota es de 3.0, esto debido a que cumpli con las primeras 4 actividades, incluso en los experimentos deje adjunto capturas de pantalla como sustentación de que si lleve a cabo los experimentos, asi mismo, las preguntas abiertas tambien las logre contestar, y tambien esta el tema de que el apply cuesta dos unidades, entonces, para el momento en el que se cierre la unidad antes de tiempo o diez minutos antes y no tenga nada del apply, considero que es lo más justo y logico.
