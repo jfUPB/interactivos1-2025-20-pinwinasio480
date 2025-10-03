@@ -429,5 +429,8 @@ Mi idea para mi propia aplicación, consiste en que en cada una de las ventanas,
 
 Siguiendo los parametros de esta unidad, en donde la cantidad de actividades define la calificación, en caso de que no actualice mi bitacora con algo del apply, considero que mi nota es de 3.0, esto debido a que cumpli con las primeras 4 actividades, incluso en los experimentos deje adjunto capturas de pantalla como sustentación de que si lleve a cabo los experimentos, asi mismo, las preguntas abiertas tambien las logre contestar, y tambien esta el tema de que el apply cuesta dos unidades, entonces, para el momento en el que se cierre la unidad antes de tiempo o diez minutos antes y no tenga nada del apply, considero que es lo más justo y logico.
 
+ACTUALIZACION: Actualmente solo alcance del apply a mencionar mi idea del proyecto y un boceto a mano de como imagino la aplicación. dado que el apply cuesta 2,0, y si dividimos el 100% de este apply, que en total son 3 puntos, cada punto seria de 33.33% si vamos a esa logica, mi nota seria: 3.0 de las actividades de investigación + 2.0 * 0,33 da como resultado 0.66, por lo que 3.0 + 0.66 = 3.66, en este caso, mi nota de autoevaluación seria 3.66 considerando que de las tres partes del apply logre hacer la primera, en caso de que no sea valido, la nota queda en 3.0
+
+
 
 
