@@ -42,7 +42,7 @@ R/ Afortunadamente la interración fue un exito, no hubo retrasos a nivel de fps
 
 ### - Explica con tus propias palabras: ¿Por qué es necesario Dev Tunnels en este escenario y cómo funciona conceptualmente?
 
-R/ DevTunnels es necesario y funciona como el in
+R/ DevTunnels es necesario porque permite que el servidor que se ejecuta localmente en mi computador (localhost) pueda ser accesible desde mi celular, incluso si no están en la misma red o si la red bloquea conexiones externas. Conceptualmente, DevTunnels crea un túnel seguro entre mi servidor local y una URL pública temporal, de modo que cualquier dispositivo pueda conectarse a esa dirección y comunicarse con mi servidor como si estuviera en Internet.
 
 ### - Describe la función de touchMoved() y por qué se usa la variable threshold en el cliente móvil.
 
@@ -50,9 +50,24 @@ R/ touchMoved() se encarga de llamar o detectar los movimientos de X y Y que hag
 
 ### - Compara brevemente Dev Tunnels con simplemente usar la IP local. ¿Cuáles son las ventajas y desventajas de cada uno?
 
-R/
+R/ Dev Tunnels: Permite acceder al servidor desde cualquier lugar sin estar en la misma red, es más seguro y no necesita configuraciones adicionales, aunque puede ser un poco más lento.
+
+IP local: Es más rápido porque la conexión es directa, pero solo funciona si el celular y el computador están conectados a la misma red WiFi, y puede requerir ajustes en el firewall o red.
 
 ### - Coloca en tu bitácora capturas de pantalla del sistema completo funcionando. Esto lo puedes hacer abriendo tanto el mobile como el desktop en tu computador y tomando una captura de pantalla de todos los involucrados (celular, computador y terminal).
 
-R/
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/4651ac6f-8b0b-4aa9-ab76-0337233150ac" />
+
+<img width="1916" height="1079" alt="image" src="https://github.com/user-attachments/assets/e78fcafc-7e35-4800-add1-5ac4902a4248" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/28ed818b-e63e-42d3-aa00-5b72d4a1143f" />
+
+https://github.com/user-attachments/assets/2a0abf67-604e-492e-8360-ab7633822d28
+
+## Actividad 3
+
+
+
+
+
 
