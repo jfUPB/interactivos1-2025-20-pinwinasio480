@@ -66,6 +66,35 @@ https://github.com/user-attachments/assets/2a0abf67-604e-492e-8360-ab7633822d28
 
 ## Actividad 3
 
+🧐🧪✍️ Reporta en tu bitácora
+
+### ¿Cuál es la función principal de express.static(‘public’) en este servidor? ¿Cómo se compara con el uso de app.get(‘/ruta’, …) del servidor de la Unidad 6?
+
+R/ express.static('public') permite que el servidor sirva automáticamente todos los archivos que se encuentren en la carpeta public (por ejemplo, HTML, CSS, JS, imágenes, etc.), sin necesidad de definir rutas específicas.
+En cambio, en la Unidad 6 se utilizaban rutas manuales con app.get('/page1', ...) o app.get('/page2', ...), donde cada una debía enviar un archivo concreto.
+
+### Explica detalladamente el flujo de un mensaje táctil: ¿Qué evento lo envía desde el móvil? ¿Qué evento lo recibe el servidor? ¿Qué hace el servidor con él? ¿Qué evento lo envía el servidor al escritorio? ¿Por qué se usa socket.broadcast.emit en lugar de io.emit o socket.emit en este caso?
+
+R/ En el cliente móvil, el evento touchMoved() detecta el movimiento del dedo y envía las coordenadas (x, y) al servidor mediante socket.emit('message', touchData). El servidor recibe ese mensaje con socket.on('message', (message) => { ... }). Luego, el servidor retransmite el mensaje a los demás clientes conectados (por ejemplo, el cliente de escritorio) usando socket.broadcast.emit('message', message).
+En el cliente de escritorio, se recibe con socket.on('message', (data) => { ... }), donde se puede usar esa información para mover un objeto en pantalla o mostrar el resultado. Se usa socket.broadcast.emit porque este método envía el mensaje a todos los clientes excepto al que lo originó (el móvil), evitando que el dispositivo que envió el mensaje lo reciba de nuevo.
+
+### Si conectaras dos computadores de escritorio y un móvil a este servidor, y movieras el dedo en el móvil, ¿Quién recibiría el mensaje retransmitido por el servidor? ¿Por qué?
+
+R/ El mensaje sería recibido por los dos computadores de escritorio, pero no por el móvil que lo envió. Esto ocurre porque el servidor utiliza socket.broadcast.emit, el cual envía los datos a todos los clientes conectados excepto al emisor. De este modo, el móvil no recibe su propio mensaje de vuelta, evitando duplicar la información o generar comportamientos erróneos.
+
+### ¿Qué información útil te proporcionan los mensajes console.log en el servidor durante la ejecución?
+
+R/ Los console.log del servidor permiten monitorear en tiempo real el comportamiento del sistema. Por ejemplo:
+
+- Muestran cuándo se conecta o desconecta un cliente, lo que ayuda a verificar si el servidor está recibiendo conexiones correctamente.
+- Permiten ver los datos enviados por el cliente (Received message => ...), confirmando que el mensaje táctil llegó correctamente.
+- En conjunto, estos registros sirven para depurar, probar y validar la comunicación entre los distintos clientes y el servidor.
+
+## Actividad 4
+
+🧐🧪✍️ Reporta en tu bitácora
+
+### Realiza un diagrama donde muestres el flujo completo de datos y eventos entre los tres componentes: móvil, servidor y escritorio. Puedes ilustrar con un ejemplo de coordenadas táctiles (x, y) y cómo viajan a través del sistema.
 
 
 
