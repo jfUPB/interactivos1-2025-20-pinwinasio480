@@ -125,6 +125,9 @@ PD: El 3.66 viene de que el apply cuesta 2,0, y si dividimos el 100% de este app
 
 3.0 de las actividades de investigación + 2.0 * 0,33 da como resultado 0.66, por lo que 3.0 + 0.66 = 3.66 (3.7). En caso de que la descripción del diseño no sea valida y que no haya subido código funcional, la nota final queda en 3.0.
 
+ACTUALIZACIÓN: Ya logre hacer el código funcional, si el profe valida lo que voy a presentar, mi nota final es 5.0, ya que aparte de cumplir con las investigaciones, tambien cumpli con el apply.
+
+
 
 
 
