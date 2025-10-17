@@ -96,6 +96,11 @@ R/ Los console.log del servidor permiten monitorear en tiempo real el comportami
 
 ### Realiza un diagrama donde muestres el flujo completo de datos y eventos entre los tres componentes: móvil, servidor y escritorio. Puedes ilustrar con un ejemplo de coordenadas táctiles (x, y) y cómo viajan a través del sistema.
 
+<img width="1080" height="1920" alt="mobilesketch js" src="https://github.com/user-attachments/assets/f3445b77-bb04-4ecc-868f-67e683feb742" />
+
+
+
+
 
 
 
