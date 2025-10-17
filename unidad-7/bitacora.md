@@ -106,16 +106,363 @@ R/ Los console.log del servidor permiten monitorear en tiempo real el comportami
 
 *Primera idea (DESCARTADA) Mi idea aqui es hacer una especie de visual de ecualizador radial. En el desktop se vera el ecualizador radial con fondo negro, y desde el celular, se puede mover el ecualizador, dependiendo de la posicion este sera mas o menos potente el ecualizador, asi mismo, influira el color, como si fuera RGB, en una parte es roja, arriba es naranja, derecha verde, abajo azul, izquierda morado, naranja arriba, etc. La canción seria de electronica o Dupsted, estilo NCS, para que el ritmo quede más acople.*
 
-IDEA FINAL: En la pantalla Desktop habrá un ecualizador como los de los DJs. Por defecto será blanco en un fondo negro, dicho ecualizador estará al ritmo de la canción Desmeon - Undone de NCS, con mobile puedes cambiar el color de las visuales del ecualizador moviendo el dedo con el touch, mientras más arriba será rojo, derecha rosado, azul abajo y cian izquierda.
+IDEA FINAL: En la pantalla Desktop habrá un ecualizador como los de los DJs en un fondo negro, dicho ecualizador estará al ritmo de la canción Desmeon - Undone de NCS, con mobile puedes cambiar el color de las visuales del ecualizador moviendo el dedo con el touch, mientras más arriba será rojo, derecha rosado, azul abajo y cian izquierda.
 
 Nota: Hasta ahora me funciona el mobile, pero no el desktop.
 
 ### Implementa tu diseño. Puedes usar IA generativa para ayudarte a escribir el código, pero primero debes hacer el diseño de lo que quieres.
 
-
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/29cab1d6-06ea-4d8f-b986-f9aa5c101a23" />
 
 ### Incluye todos los códigos (servidor y clientes) en tu bitácora.
 
+### Desktop
+
+Index.html:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecualizador Desktop</title>
+
+<!-- p5.js -->
+<script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+<!-- p5.sound.js -->
+<script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/addons/p5.sound.min.js"></script>
+<!-- Socket.IO -->
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<!-- Tu sketch -->
+<script src="sketch.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      touch-action: none;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+</body>
+</html>
+
+```
+
+Sketch.js:
+```
+let socket;
+let circleX = 150;
+let circleY = 200;
+
+let song;
+let fft;
+const numBars = 32;
+
+function preload() {
+  // Asegúrate de que song.mp3 esté en public/desktop/
+  song = loadSound('song.mp3');
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(0);
+
+  // Requiere interacción para iniciar audio en navegadores modernos
+  userStartAudio();
+
+  fft = new p5.FFT(0.8, numBars);
+
+  socket = io();
+
+  socket.on('connect', () => console.log('✅ Conectado al servidor'));
+
+  socket.on('message', (data) => {
+    console.log("📨 Datos recibidos:", data);
+    if (data?.type === 'touch') {
+      circleX = data.x;
+      circleY = data.y;
+    }
+  });
+
+  socket.on('disconnect', () => console.log('⚠️ Desconectado del servidor'));
+}
+
+function draw() {
+  background(0);
+
+  // Verifica si el audio está sonando
+  console.log("🎵 ¿Está sonando?", song.isPlaying());
+
+  let spectrum = fft.analyze();
+
+  // Color reactivo al input del móvil
+  let r = map(circleY, 0, height, 255, 0);
+  let g = map(circleX, 0, width, 0, 255);
+  let b = map(circleY, 0, height, 0, 255);
+  let col = color(r, g, b);
+
+  noStroke();
+  fill(col);
+
+  // Dibujar barras del ecualizador
+  let barWidth = width / numBars;
+  for (let i = 0; i < numBars; i++) {
+    let h = map(spectrum[i], 0, 255, 0, height);
+    rect(i * barWidth, height - h, barWidth - 2, h);
+  }
+}
+
+function mousePressed() {
+  console.log("🖱️ mousePressed activado");
+
+  // Forzar desbloqueo del contexto de audio
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
+
+  // Iniciar la música si no está sonando
+  if (!song.isPlaying()) {
+    song.loop();
+  }
+}
+
+/*let socket;
+let circleX = 200;
+let circleY = 200;
+const port = 3000;
+
+function setup() {
+    createCanvas(300, 400);
+    background(220);
+    socket = io(); 
+
+    socket.on('connect', () => {
+        console.log('Connected to server');
+    });
+
+    socket.on('message', (data) => {
+        console.log(`Received message:`, data);
+        if (data && data.type === 'touch') {
+            circleX = data.x;
+            circleY = data.y;
+        }
+    });    
+
+    socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+    });
+
+    socket.on('connect_error', (error) => {
+        console.error('Socket.IO error:', error);
+    });
+}
+
+function draw() {
+    background(220);
+    fill(255, 0, 0);
+    ellipse(circleX, circleY, 50, 50);
+}*/
+
+
+```
+
+### Mobile
+
+Index.html:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Visualizer Control</title>
+
+  <!-- p5.js -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+
+  <!-- Socket.IO -->
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+  <!-- Script del móvil -->
+  <script src="sketch.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      touch-action: none;
+      background: black;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+</body>
+</html>
+
+```
+
+Sketch.js:
+```
+let socket;
+let lastTouchX = null;
+let lastTouchY = null;
+const threshold = 5;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(0);
+  socket = io();
+
+  socket.on('connect', () => {
+    console.log('Connected to server');
+  });
+
+  socket.on('disconnect', () => {
+    console.log('Disconnected from server');
+  });
+
+  socket.on('connect_error', (error) => {
+    console.error('Socket.IO error:', error);
+  });
+}
+
+function draw() {
+  background(0);
+
+  if (lastTouchX !== null && lastTouchY !== null) {
+    let r = map(lastTouchY, 0, height, 255, 0);
+    let g = map(lastTouchX, 0, width, 0, 255);
+    let b = map(lastTouchY, 0, height, 0, 255);
+    fill(r, g, b);
+    noStroke();
+    ellipse(lastTouchX, lastTouchY, 50, 50);
+  }
+
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textSize(18);
+  text('Move your finger to change colors', width / 2, height - 30);
+}
+
+function touchMoved() {
+  if (socket && socket.connected) {
+    let dx = abs(mouseX - lastTouchX);
+    let dy = abs(mouseY - lastTouchY);
+
+    if (dx > threshold || dy > threshold || lastTouchX === null) {
+      let touchData = {
+        type: 'touch',
+        x: mouseX,
+        y: mouseY
+      };
+      socket.emit('message', touchData);
+
+      lastTouchX = mouseX;
+      lastTouchY = mouseY;
+    }
+  }
+  return false;
+}
+
+/*let socket;
+let lastTouchX = null; 
+let lastTouchY = null; 
+const threshold = 5;
+
+function setup() {
+    createCanvas(300, 400);
+    background(220);
+    socket = io();
+
+    socket.on('connect', () => {
+        console.log('Connected to server');
+    });
+
+    socket.on('message', (data) => {
+        console.log(`Received message: ${data}`);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+    });
+
+    socket.on('connect_error', (error) => {
+        console.error('Socket.IO error:', error);
+    });
+}
+
+function draw() {
+    background(220);
+    fill(255, 128, 0);
+    textAlign(CENTER, CENTER);
+    textSize(24);
+    text('Touch to move the circle', width / 2, height / 2);
+}
+
+function touchMoved() {
+    if (socket && socket.connected) { 
+        let dx = abs(mouseX - lastTouchX);
+        let dy = abs(mouseY - lastTouchY);
+
+        if (dx > threshold || dy > threshold || lastTouchX === null) {
+            let touchData = {
+                type: 'touch',
+                x: mouseX,
+                y: mouseY
+            };
+            socket.emit('message', touchData);
+
+            lastTouchX = mouseX;
+            lastTouchY = mouseY;
+        }
+    }
+    return false;
+}*/
+
+```
+
+### Server.js
+
+```
+const express = require('express');
+const http = require('http');
+const socketIO = require('socket.io');
+
+const app = express();
+const server = http.createServer(app); 
+const io = socketIO(server); 
+const port = 3006;
+
+app.use(express.static('public'));
+
+io.on('connection', (socket) => {
+    console.log('New client connected');
+    socket.on('message', (message) => {
+        console.log('Received message =>', message);
+        socket.broadcast.emit('message', message);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Client disconnected');
+    });
+});
+
+server.listen(port, () => {
+    console.log(`Server is listening on http://localhost:${port}`);
+});
+```
 
 ## Autoevaluación
 
@@ -126,6 +473,7 @@ PD: El 3.66 viene de que el apply cuesta 2,0, y si dividimos el 100% de este app
 3.0 de las actividades de investigación + 2.0 * 0,33 da como resultado 0.66, por lo que 3.0 + 0.66 = 3.66 (3.7). En caso de que la descripción del diseño no sea valida y que no haya subido código funcional, la nota final queda en 3.0.
 
 ACTUALIZACIÓN: Ya logre hacer el código funcional, si el profe valida lo que voy a presentar, mi nota final es 5.0, ya que aparte de cumplir con las investigaciones, tambien cumpli con el apply.
+
 
 
 
