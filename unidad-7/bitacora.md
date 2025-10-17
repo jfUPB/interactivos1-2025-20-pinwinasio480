@@ -104,9 +104,11 @@ R/ Los console.log del servidor permiten monitorear en tiempo real el comportami
 
 ### Diseña una aplicación interactiva que use el touch del móvil para controlar una visuales de tema musical de tu elección. Las visuales correrán en una aplicación de escritorio (desktop). Recuerda que ambas aplicaciones las construirás usando p5.js y utilizando el servidor Node.js como puente.
 
-*Primera idea (DESCARTADA) Mi idea aqui es hacer una especie de visual de ecualizador radial. En el desktop se vera el ecualizador radial con fondo negro, y desde el celular, se puede mover el ecualizador, dependiendo de la posicion este sera mas o menos potente el ecualizador, asi mismo, influira el color, azul mientras más bajo y rosa mientras sea más fuerte. La canción seria de electronica o Dupsted, estilo NCS, para que el ritmo quede más acople.*
+*Primera idea (DESCARTADA) Mi idea aqui es hacer una especie de visual de ecualizador radial. En el desktop se vera el ecualizador radial con fondo negro, y desde el celular, se puede mover el ecualizador, dependiendo de la posicion este sera mas o menos potente el ecualizador, asi mismo, influira el color, como si fuera RGB, en una parte es roja, arriba es naranja, derecha verde, abajo azul, izquierda morado, naranja arriba, etc. La canción seria de electronica o Dupsted, estilo NCS, para que el ritmo quede más acople.*
 
 IDEA FINAL: En la pantalla Desktop habrá un ecualizador como los de los DJs. Por defecto será blanco en un fondo negro, dicho ecualizador estará al ritmo de la canción Desmeon - Undone de NCS, con mobile puedes cambiar el color de las visuales del ecualizador moviendo el dedo con el touch, mientras más arriba será rojo, derecha rosado, azul abajo y cian izquierda.
+
+Nota: Hasta ahora me funciona el mobile, pero no el desktop.
 
 ### Implementa tu diseño. Puedes usar IA generativa para ayudarte a escribir el código, pero primero debes hacer el diseño de lo que quieres.
 
@@ -122,6 +124,7 @@ Para el momento en el que hago la autoevaluación, he cumplido con todos los eje
 PD: El 3.66 viene de que el apply cuesta 2,0, y si dividimos el 100% de este apply, que en total son 3 puntos, cada punto seria de 33.33%.
 
 3.0 de las actividades de investigación + 2.0 * 0,33 da como resultado 0.66, por lo que 3.0 + 0.66 = 3.66 (3.7). En caso de que la descripción del diseño no sea valida y que no haya subido código funcional, la nota final queda en 3.0.
+
 
 
 
