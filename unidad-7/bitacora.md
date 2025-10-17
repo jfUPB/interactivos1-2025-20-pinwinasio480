@@ -66,7 +66,7 @@ https://github.com/user-attachments/assets/2a0abf67-604e-492e-8360-ab7633822d28
 
 ## Actividad 3
 
-🧐🧪✍️ Reporta en tu bitácora
+### *🧐🧪✍️ Reporta en tu bitácora*
 
 ### ¿Cuál es la función principal de express.static(‘public’) en este servidor? ¿Cómo se compara con el uso de app.get(‘/ruta’, …) del servidor de la Unidad 6?
 
@@ -92,14 +92,32 @@ R/ Los console.log del servidor permiten monitorear en tiempo real el comportami
 
 ## Actividad 4
 
-🧐🧪✍️ Reporta en tu bitácora
+### *🧐🧪✍️ Reporta en tu bitácora*
 
 ### Realiza un diagrama donde muestres el flujo completo de datos y eventos entre los tres componentes: móvil, servidor y escritorio. Puedes ilustrar con un ejemplo de coordenadas táctiles (x, y) y cómo viajan a través del sistema.
 
 <img width="1080" height="1920" alt="mobilesketch js" src="https://github.com/user-attachments/assets/f3445b77-bb04-4ecc-868f-67e683feb742" />
 
+## Actividad: APPLY
+
+### *🧐🧪✍️ Reporta en tu bitácora*
+
+### Diseña una aplicación interactiva que use el touch del móvil para controlar una visuales de tema musical de tu elección. Las visuales correrán en una aplicación de escritorio (desktop). Recuerda que ambas aplicaciones las construirás usando p5.js y utilizando el servidor Node.js como puente.
+
+Mi idea aqui es hacer una especie de visual de ecualizador radial. En el desktop se vera el ecualizador radial con fondo negro, y desde el celular, se puede mover el ecualizador, dependiendo de la posicion este sera mas o menos potente el ecualizador, asi mismo, influira el color, azul mientras más bajo y rosa mientras sea más fuerte. La canción seria de electronica o Dupsted, estilo NCS, para que el ritmo quede más acople.
+
+### Implementa tu diseño. Puedes usar IA generativa para ayudarte a escribir el código, pero primero debes hacer el diseño de lo que quieres.
 
 
+
+### Incluye todos los códigos (servidor y clientes) en tu bitácora.
+
+
+
+
+
+
+## Autoevaluación
 
 
 
