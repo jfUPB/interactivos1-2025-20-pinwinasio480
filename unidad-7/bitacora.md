@@ -119,5 +119,8 @@ IDEA FINAL: En la pantalla Desktop habrá un ecualizador como los de los DJs. Po
 
 Para el momento en el que hago la autoevaluación, he cumplido con todos los ejercicios y puntos de la investigación (incluso en algunos mostrando capturas y videos del procedimiento y diagrama). Lo cual equivale a 3.0. No obstante, en el apply tengo escrita el diseño de mi programa de visuales, en caso de que solo sea escrito, esto me suma hasta 3.66 (3.7). En caso de que no suba nada más, es porque estoy teniendo dificultades con el código, especialmente porque aveces los prompts que le doy a la IA no funcionan o no concuerdan con mi idea del todo.
 
-PD: El 3.66 viene de que 
+PD: El 3.66 viene de que el apply cuesta 2,0, y si dividimos el 100% de este apply, que en total son 3 puntos, cada punto seria de 33.33%.
+
+3.0 de las actividades de investigación + 2.0 * 0,33 da como resultado 0.66, por lo que 3.0 + 0.66 = 3.66 (3.7).
+
 
