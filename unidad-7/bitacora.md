@@ -104,7 +104,9 @@ R/ Los console.log del servidor permiten monitorear en tiempo real el comportami
 
 ### Diseña una aplicación interactiva que use el touch del móvil para controlar una visuales de tema musical de tu elección. Las visuales correrán en una aplicación de escritorio (desktop). Recuerda que ambas aplicaciones las construirás usando p5.js y utilizando el servidor Node.js como puente.
 
-Mi idea aqui es hacer una especie de visual de ecualizador radial. En el desktop se vera el ecualizador radial con fondo negro, y desde el celular, se puede mover el ecualizador, dependiendo de la posicion este sera mas o menos potente el ecualizador, asi mismo, influira el color, azul mientras más bajo y rosa mientras sea más fuerte. La canción seria de electronica o Dupsted, estilo NCS, para que el ritmo quede más acople.
+*Primera idea (DESCARTADA) Mi idea aqui es hacer una especie de visual de ecualizador radial. En el desktop se vera el ecualizador radial con fondo negro, y desde el celular, se puede mover el ecualizador, dependiendo de la posicion este sera mas o menos potente el ecualizador, asi mismo, influira el color, azul mientras más bajo y rosa mientras sea más fuerte. La canción seria de electronica o Dupsted, estilo NCS, para que el ritmo quede más acople.*
+
+IDEA FINAL: En la pantalla Desktop habrá un ecualizador como los de los DJs. Por defecto será blanco en un fondo negro, dicho ecualizador estará al ritmo de la canción Desmeon - Undone de NCS, con mobile puedes cambiar el color de las visuales del ecualizador moviendo el dedo con el touch, mientras más arriba será rojo, derecha rosado, azul abajo y cian izquierda.
 
 ### Implementa tu diseño. Puedes usar IA generativa para ayudarte a escribir el código, pero primero debes hacer el diseño de lo que quieres.
 
@@ -113,13 +115,9 @@ Mi idea aqui es hacer una especie de visual de ecualizador radial. En el desktop
 ### Incluye todos los códigos (servidor y clientes) en tu bitácora.
 
 
-
-
-
-
 ## Autoevaluación
 
+Para el momento en el que hago la autoevaluación, he cumplido con todos los ejercicios y puntos de la investigación (incluso en algunos mostrando capturas y videos del procedimiento y diagrama). Lo cual equivale a 3.0. No obstante, en el apply tengo escrita el diseño de mi programa de visuales, en caso de que solo sea escrito, esto me suma hasta 3.66 (3.7). En caso de que no suba nada más, es porque estoy teniendo dificultades con el código, especialmente porque aveces los prompts que le doy a la IA no funcionan o no concuerdan con mi idea del todo.
 
-
-
+PD: El 3.66 viene de que 
 
