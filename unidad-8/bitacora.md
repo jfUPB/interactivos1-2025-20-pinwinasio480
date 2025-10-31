@@ -148,13 +148,13 @@ function setup() {
   // Socket IO (mantengo la funcionalidad touch/mobile)
   socket = io();
 
-  socket.on('connect', () => console.log('✅ Conectado al servidor'));
-  socket.on('message', (data) => {
-    if (data?.type === 'touch') {
-      circleX = data.x;
-      circleY = data.y;
-    }
-  });
+socket.on('message', (data) => {
+  if (data?.type === 'touch') {
+    // Escalamos de nuevo las coordenadas normalizadas que vienen del móvil
+    circleX = data.x * width;
+    circleY = data.y * height;
+  }
+});
   socket.on('disconnect', () => console.log('⚠️ Desconectado del servidor'));
 
   // Botón para conectar micro:bit vía Web Serial
@@ -356,6 +356,7 @@ function mousePressed() {
     song.loop();
   }
 }*/
+
 ```
 
 desktop (index.html):
@@ -434,35 +435,21 @@ function draw() {
 }
 
 function touchMoved() {
-    if (touches.length > 0) {
+      if (touches.length > 0) {
     let t = touches[0];
-    let x = t.x;
-    let y = t.y;
-
-    // Si es el primer toque, inicializa coordenadas
-    if (lastTouchX === null || lastTouchY === null) {
-      lastTouchX = x;
-      lastTouchY = y;
-    }
+    let normX = t.x / width;   // valor entre 0 y 1
+    let normY = t.y / height;  // valor entre 0 y 1
 
     if (socket && socket.connected) {
-      let dx = abs(x - lastTouchX);
-      let dy = abs(y - lastTouchY);
-
-      if (dx > threshold || dy > threshold) {
-        let touchData = {
-          type: 'touch',
-          x: x,
-          y: y
-        };
-        socket.emit('message', touchData);
-
-        lastTouchX = x;
-        lastTouchY = y;
-      }
+      let touchData = {
+        type: 'touch',
+        x: normX,
+        y: normY
+      };
+      socket.emit('message', touchData);
     }
   }
-  return false; // Evita el scroll en móviles
+  return false;
 }
 ```
 
@@ -513,7 +500,7 @@ const socketIO = require('socket.io');
 const app = express();
 const server = http.createServer(app); 
 const io = socketIO(server); 
-const port = 3004;
+const port = 3005;
 
 app.use(express.static('public'));
 
@@ -594,6 +581,7 @@ while True:
 ## Autoevaluación
 
 Siguiendo la rubrica de esta última unidad, cumpli con la realización de todas las actividades de investigación (mostrar referencias, definir el concepto, explicar como funciona el mobile y micro:bit de forma resumida, mostrar conceptos del programa y el diagrama). No obstante, apesar de eso, el apply lo hice, pero la parte de micro:bit no funciona del todo bien, es debido a esto que esa actividad no queda valida. Por lo que mi nota final de esta unidad es 3.0. 
+
 
 
 
