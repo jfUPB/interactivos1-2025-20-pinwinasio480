@@ -35,7 +35,7 @@ Desde el movil, con un circulo que aparece en la pantalla como en la unidad 7, p
 
 #### - Haz un diagrama que explique cómo se comunicarán los diferentes componentes del sistema.
 
-
+![Diagrama Unidad 8](https://github.com/user-attachments/assets/7a1f68d1-05a8-45af-8218-693ebf2be45a)
 
 
 
