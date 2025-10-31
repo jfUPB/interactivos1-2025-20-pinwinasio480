@@ -435,10 +435,14 @@ function draw() {
 }
 
 function touchMoved() {
-      if (touches.length > 0) {
+ if (touches.length > 0) {
     let t = touches[0];
     let normX = t.x / width;   // valor entre 0 y 1
     let normY = t.y / height;  // valor entre 0 y 1
+
+    // 🔹 Actualizar las variables para dibujar el círculo
+    lastTouchX = t.x;
+    lastTouchY = t.y;
 
     if (socket && socket.connected) {
       let touchData = {
@@ -581,6 +585,7 @@ while True:
 ## Autoevaluación
 
 Siguiendo la rubrica de esta última unidad, cumpli con la realización de todas las actividades de investigación (mostrar referencias, definir el concepto, explicar como funciona el mobile y micro:bit de forma resumida, mostrar conceptos del programa y el diagrama). No obstante, apesar de eso, el apply lo hice, pero la parte de micro:bit no funciona del todo bien, es debido a esto que esa actividad no queda valida. Por lo que mi nota final de esta unidad es 3.0. 
+
 
 
 
