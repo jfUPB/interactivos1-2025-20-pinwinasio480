@@ -27,13 +27,14 @@ Desde el movil, con un circulo que aparece en la pantalla como en la unidad 7, p
 
 ![Boceto programa Unidad 8 Samuel Gómez Espitia](https://github.com/user-attachments/assets/27bddfd1-baf5-43d7-a6ee-06b8dbbcafd4)
 
-![Boceto programa Unidad 8 Samuel Gómez Espitia (1)](https://github.com/user-attachments/assets/4f652218-93cd-4bf4-b342-c6316a616f13)
+![Boceto programa Unidad 8 Samuel Gómez Espitia](https://github.com/user-attachments/assets/c4e98495-8c7c-4bba-a088-23450d63f528)
 
-![Boceto programa Unidad 8 Samuel Gómez Espitia (2)](https://github.com/user-attachments/assets/0f9e5b3a-26c4-47f9-a202-8843165ee3d1)
+![Boceto programa Unidad 8 Samuel Gómez Espitia (1)](https://github.com/user-attachments/assets/91c8c588-5f8d-43c5-b404-8dcb0dc056cc)
 
 ![Boceto programa Unidad 8 Samuel Gómez Espitia (3)](https://github.com/user-attachments/assets/821de49d-e244-4fef-b13c-0806dcfedfe6)
 
 #### - Haz un diagrama que explique cómo se comunicarán los diferentes componentes del sistema.
+
 
 
 
