@@ -37,6 +37,13 @@ Desde el movil, con un circulo que aparece en la pantalla como en la unidad 7, p
 
 ![Diagrama Unidad 8](https://github.com/user-attachments/assets/7a1f68d1-05a8-45af-8218-693ebf2be45a)
 
+## Actividad 02
+
+
+## Autoevaluación
+
+Siguiendo la rubrica de esta última unidad, cumpli con la realización de todas las actividades de investigación (mostrar referencias, definir el concepto, explicar como funciona el mobile, desktop y micro:bit de forma resumida, mostrar conceptos del programa y el diagrama). No obstante, apesar de eso, el apply lo hice, pero la parte de micro:bit no funciona del todo bien, es debido a esto que esa actividad no queda valida. Por lo que mi nota final de esta unidad es 3.0. 
+
 
 
 
